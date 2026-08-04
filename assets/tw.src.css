@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Section label — Hebrew-first: a small gold kicker over a short stub rule.
+     Replaces the old English mono eyebrows. Space Mono ships no Hebrew glyphs,
+     so any Hebrew label has to stay in Heebo. */
+  .kicker {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #A6864B;
+  }
+  .kicker::after {
+    content: "";
+    display: block;
+    width: 2.25rem;
+    height: 1px;
+    background: #C8A96E;
+    margin-top: 0.6rem;
+  }
+  /* variant without the rule, for inline/meta positions */
+  .kicker-plain::after { display: none; }
+}

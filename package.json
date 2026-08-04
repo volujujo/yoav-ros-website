@@ -1,0 +1,12 @@
+{
+  "name": "yoav-rozenberg-site",
+  "private": true,
+  "description": "Static marketing site for Yoav Rozenberg — acting workshops, Jaffa/Tel Aviv.",
+  "scripts": {
+    "css": "tailwindcss -c tailwind.config.js -i assets/tw.src.css -o assets/tw.css --minify",
+    "css:watch": "tailwindcss -c tailwind.config.js -i assets/tw.src.css -o assets/tw.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

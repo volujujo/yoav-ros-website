@@ -1,0 +1,17 @@
+# Netlify config — static site served from the repo root, no build step.
+[build]
+  publish = "."
+
+# Redirect the www host to the bare domain (adjust if you prefer www as primary).
+# Netlify also lets you set the primary domain in the dashboard.
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

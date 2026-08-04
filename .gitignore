@@ -1,0 +1,23 @@
+# Build tooling
+node_modules/
+
+# Raw source material (originals kept locally — not part of the deployed site).
+# Everything the site actually uses lives in assets/ and is tracked normally.
+*.MOV
+*.mov
+*.docx
+ABOUT_pic.jpeg
+LOGO_1.jpeg
+about_pic*.PNG
+about_pic*.jpeg
+about_pic*.jpg
+yoav-portrait.jpeg
+happy_students/
+
+# Ad-hoc design-review screenshots
+/_*.png
+/_*.html
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
