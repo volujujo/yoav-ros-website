@@ -15,16 +15,14 @@
 
   /* =====================================================================
      SITE CONFIG — single source of truth.
-     ⚠️ EDIT THESE before launch:
-       whatsapp : digits only, international format, no + or spaces
-                  (e.g. Israel 054-123-4567  ->  '972541234567')
-       phone    : human-readable, used for click-to-call (tel:)
-       email    : contact email
+       whatsapp  : digits only, international format, no + or spaces
+       phone     : human-readable, used for click-to-call (tel:)
+       instagram : full profile URL
      ===================================================================== */
   var SITE = window.SITE = {
-    whatsapp: '972500000000',                 // TODO: real WhatsApp number
-    phone: '+972-50-000-0000',                // TODO: real phone (or '')
-    email: 'hello@example.com',               // TODO: real email (or '')
+    whatsapp: '972526202541',
+    phone: '+972-52-620-2541',
+    instagram: 'https://www.instagram.com/yoav_ros/',
     waDefaultMsg: 'היי יואב, הגעתי דרך האתר ואשמח לשמוע פרטים על הסדנאות.',
   };
 
@@ -39,12 +37,16 @@
       el.setAttribute('target', '_blank');
       el.setAttribute('rel', 'noopener');
     });
-    /* tel: / mailto: helpers */
+    /* tel: / instagram helpers */
     document.querySelectorAll('[data-tel]').forEach(function (el) {
       if (SITE.phone) el.setAttribute('href', 'tel:' + SITE.phone.replace(/[^\d+]/g, ''));
     });
-    document.querySelectorAll('[data-mail]').forEach(function (el) {
-      if (SITE.email) el.setAttribute('href', 'mailto:' + SITE.email);
+    document.querySelectorAll('[data-instagram]').forEach(function (el) {
+      if (SITE.instagram) {
+        el.setAttribute('href', SITE.instagram);
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+      }
     });
   }
 
