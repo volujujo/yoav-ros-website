@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Keyboard focus. The site is navigated almost entirely by links, slides
+     and accordion rows, and the UA default ring is close to invisible on
+     cream — so every focusable element gets an explicit burgundy ring.
+     :focus-visible only, so mouse clicks stay clean. */
+  :focus-visible {
+    outline: 2px solid #9E1B32;
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+  /* on the dark surfaces (mobile menu, lightboxes) burgundy disappears */
+  .bg-charcoal :focus-visible,
+  .bg-ink :focus-visible,
+  [data-yt-overlay] :focus-visible,
+  [data-img-overlay] :focus-visible {
+    outline-color: #DcC08A;
+  }
+
+  /* Skip link — first tab stop on every page. */
+  .skip-link {
+    position: absolute;
+    right: 1.5rem;
+    top: -100px;
+    z-index: 100;
+    background: #9E1B32;
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    font-size: 14px;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus { top: 1rem; }
+}
+
 @layer components {
   /* Section label — Hebrew-first: a small gold kicker over a short stub rule.
      Replaces the old English mono eyebrows. Space Mono ships no Hebrew glyphs,
@@ -11,7 +44,7 @@
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.02em;
-    color: #A6864B;
+    color: #8A6D3B;
   }
   .kicker::after {
     content: "";
@@ -23,4 +56,164 @@
   }
   /* variant without the rule, for inline/meta positions */
   .kicker-plain::after { display: none; }
+
+  /* ===================================================================
+     Buttons. The site used to run three treatments for the same action —
+     burgundy fills on the homepage, gold fills everywhere else, and a gold
+     outline in the header. One primary (burgundy, which actually has
+     contrast on cream) and one ghost, defined once.
+     =================================================================== */
+  .btn-primary {
+    background: #9E1B32;
+    color: #FFFFFF;
+    box-shadow: 0 25px 50px -15px rgba(158, 27, 50, 0.45);
+    transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+  }
+  .btn-primary:hover {
+    background: #C4223F;
+    box-shadow: 0 30px 60px -15px rgba(196, 34, 63, 0.55);
+    transform: scale(1.03);
+  }
+  .btn-ghost {
+    border: 1px solid #9E1B32;
+    color: #9E1B32;
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+  .btn-ghost:hover {
+    background: #9E1B32;
+    color: #FFFFFF;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-primary:hover { transform: none; }
+  }
+
+  /* ===================================================================
+     Sticky mobile CTA — below md the header's "להרשמה לסדנה" button is
+     hidden, which left phones with no contact affordance until the
+     footer. This bar is the mobile primary action.
+     =================================================================== */
+  .mobile-cta {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: #9E1B32;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: 1rem 1.25rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -12px 30px -18px rgba(26, 26, 26, 0.55);
+    transition: background 0.35s ease;
+  }
+  .mobile-cta:active { background: #6E1224; }
+  /* keep the bar from covering the last line of the footer */
+  @media (max-width: 767px) {
+    body { padding-bottom: 4.25rem; }
+  }
+
+  /* ===================================================================
+     Carousel controls — built by main.js (initMediaCarousel). The track
+     hides its scrollbar and dims inactive slides, which reads as
+     decoration rather than "there is more over here"; the arrows and the
+     counter make the track's length legible.
+     =================================================================== */
+  .cf-ctls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    /* the cluster is dir="ltr" so the arrows keep pointing the way the track
+       actually moves; max-content keeps the RTL parent from stranding it on
+       the far left, away from the content column */
+    width: max-content;
+    max-width: 100%;
+  }
+  .cf-ctl {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: none;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    color: #1A1A1A;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.35s ease, background 0.35s ease, color 0.35s ease;
+  }
+  .cf-ctl:hover {
+    border-color: #9E1B32;
+    background: #9E1B32;
+    color: #fff;
+  }
+  .cf-count {
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: rgba(26, 26, 26, 0.65);
+    letter-spacing: 0.04em;
+  }
+
+  /* ===================================================================
+     FAQ accordion — native <details>, so it works with zero JS and is
+     announced correctly by screen readers.
+     =================================================================== */
+  .faq-item {
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+  }
+  .faq-item:last-of-type {
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+  }
+  .faq-q {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.4rem 0;
+    cursor: pointer;
+    list-style: none;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: #1A1A1A;
+    transition: color 0.35s ease;
+  }
+  @media (min-width: 640px) {
+    .faq-q { font-size: 1.25rem; }
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q:hover { color: #9E1B32; }
+  /* the +/− indicator: two strokes, and the vertical one collapses on open */
+  .faq-q::after {
+    content: "";
+    flex: none;
+    width: 0.85rem;
+    height: 0.85rem;
+    margin-top: 0.35rem;
+    background-image:
+      linear-gradient(#8A6D3B, #8A6D3B),
+      linear-gradient(#8A6D3B, #8A6D3B);
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 1px, 1px 100%;
+    transition: background-size 0.4s cubic-bezier(0.16, 0.84, 0.44, 1);
+  }
+  details[open] > .faq-q::after {
+    background-size: 100% 1px, 1px 0%;
+  }
+  .faq-a {
+    padding-bottom: 1.5rem;
+    max-width: 52rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(26, 26, 26, 0.7);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-q::after { transition: none; }
+  }
 }

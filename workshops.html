@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/tw.css?v=29" />
+<link rel="stylesheet" href="assets/tw.css?v=33" />
 <style>
   html { scroll-behavior: smooth; }
   body { background: #FAF8F4; color: #1A1A1A; -webkit-font-smoothing: antialiased; }
@@ -32,12 +32,363 @@
   @keyframes rise { from { transform: translateY(30px); } to { transform: none; } }
   .ul-grow { background-image: linear-gradient(currentColor,currentColor); background-size: 0% 1px; background-repeat: no-repeat; background-position: 100% 100%; transition: background-size .55s cubic-bezier(.16,.84,.44,1); padding-bottom: 2px; }
   .ul-grow:hover { background-size: 100% 1px; }
-  .badge-recommended { display: inline-block; border: 0.5px solid #C8A96E; color: #C8A96E; font-size: 10px; padding: 2px 8px; letter-spacing: 0.04em; vertical-align: middle; }
+  .badge-recommended { display: inline-block; border: 1px solid #8A6D3B; color: #8A6D3B; font-size: 10px; padding: 2px 8px; letter-spacing: 0.04em; vertical-align: middle; }
   /* offset anchor targets so the fixed header doesn't cover headings */
   [id] { scroll-margin-top: 6rem; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "EducationalOrganization"
+      ],
+      "@id": "https://yoavrosenberg.com/#studio",
+      "name": "בחירה חופשית — סדנאות משחק של יואב רוזנברג",
+      "description": "סדנאות משחק מול מצלמה בשיטת \"בחירה חופשית\" — לילדים, נוער ובוגרים, סדנאות אישיות והכנה לאודישן. הסטודיו ביפו, תל אביב.",
+      "url": "https://yoavrosenberg.com/",
+      "image": "https://yoavrosenberg.com/assets/og-image.jpg",
+      "logo": "https://yoavrosenberg.com/assets/logo-full.png",
+      "telephone": "+972-52-620-2541",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "שדרות ירושלים 67",
+        "addressLocality": "יפו, תל אביב",
+        "addressCountry": "IL"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "תל אביב-יפו"
+      },
+      "founder": {
+        "@id": "https://yoavrosenberg.com/#yoav"
+      },
+      "sameAs": [
+        "https://www.instagram.com/yoav_ros/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yoavrosenberg.com/#yoav",
+      "name": "יואב רוזנברג",
+      "jobTitle": "שחקן ומורה למשחק",
+      "url": "https://yoavrosenberg.com/about.html",
+      "image": "https://yoavrosenberg.com/assets/yoav-portrait.jpg",
+      "telephone": "+972-52-620-2541",
+      "sameAs": [
+        "https://www.instagram.com/yoav_ros/"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "בית הספר למשחק ניסן נתיב, תל אביב"
+      },
+      "knowsAbout": [
+        "משחק מול מצלמה",
+        "הכנה לאודישן",
+        "ניתוח סצנה",
+        "משחק לתיאטרון"
+      ],
+      "worksFor": {
+        "@id": "https://yoavrosenberg.com/#studio"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://yoavrosenberg.com/workshop-shnati.html#course",
+      "name": "הקורס השנתי — משחק מול מצלמה",
+      "description": "תהליך שנתי מלא בשיטת \"בחירה חופשית\": ניתוח סצנה, עבודה מתמשכת מול מצלמה, סימולציות אודישן ומפגשי אורח עם אנשי מקצוע מהתעשייה.",
+      "url": "https://yoavrosenberg.com/workshop-shnati.html",
+      "inLanguage": "he",
+      "provider": {
+        "@id": "https://yoavrosenberg.com/#studio"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "inLanguage": "he",
+        "location": {
+          "@type": "Place",
+          "name": "הסטודיו של יואב רוזנברג",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "שדרות ירושלים 67",
+            "addressLocality": "יפו, תל אביב",
+            "addressCountry": "IL"
+          }
+        },
+        "instructor": {
+          "@id": "https://yoavrosenberg.com/#yoav"
+        }
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "שחקנים מגיל 18 ומעלה"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://yoavrosenberg.com/workshop-bogrim.html#course",
+      "name": "\"בחירה חופשית\" — סדנת משחק לבוגרים",
+      "description": "8 מפגשים בני 3 שעות בשיטת \"בחירה חופשית\": ניתוח סצנות, סימולציות אודישן מצולמות, קולבאק ומאצ'ינג ועבודה מול מצלמה.",
+      "url": "https://yoavrosenberg.com/workshop-bogrim.html",
+      "inLanguage": "he",
+      "provider": {
+        "@id": "https://yoavrosenberg.com/#studio"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "inLanguage": "he",
+        "location": {
+          "@type": "Place",
+          "name": "הסטודיו של יואב רוזנברג",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "שדרות ירושלים 67",
+            "addressLocality": "יפו, תל אביב",
+            "addressCountry": "IL"
+          }
+        },
+        "instructor": {
+          "@id": "https://yoavrosenberg.com/#yoav"
+        },
+        "courseWorkload": "PT24H"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "שחקנים מגיל 18 ומעלה"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://yoavrosenberg.com/workshop-noar.html#course",
+      "name": "\"בחירה חופשית\" — סדנת משחק לנוער",
+      "description": "8 מפגשים לבני נוער 14–17: שיטת \"בחירה חופשית\", ניתוח סצנות, סימולציות אודישן מצולמות ועבודה מול מצלמה.",
+      "url": "https://yoavrosenberg.com/workshop-noar.html",
+      "inLanguage": "he",
+      "provider": {
+        "@id": "https://yoavrosenberg.com/#studio"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "inLanguage": "he",
+        "location": {
+          "@type": "Place",
+          "name": "הסטודיו של יואב רוזנברג",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "שדרות ירושלים 67",
+            "addressLocality": "יפו, תל אביב",
+            "addressCountry": "IL"
+          }
+        },
+        "instructor": {
+          "@id": "https://yoavrosenberg.com/#yoav"
+        },
+        "courseWorkload": "PT22H"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "בני נוער בגילאי 14–17"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://yoavrosenberg.com/workshop-yeladim.html#course",
+      "name": "\"בחירה חופשית\" — סדנת משחק לילדים",
+      "description": "5 מפגשים רצופים לילדים 9–13: עבודה מול מצלמה בסביבה חמה ואינטימית, ניתוח סצנות וסימולציות אודישן.",
+      "url": "https://yoavrosenberg.com/workshop-yeladim.html",
+      "inLanguage": "he",
+      "provider": {
+        "@id": "https://yoavrosenberg.com/#studio"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "inLanguage": "he",
+        "location": {
+          "@type": "Place",
+          "name": "הסטודיו של יואב רוזנברג",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "שדרות ירושלים 67",
+            "addressLocality": "יפו, תל אביב",
+            "addressCountry": "IL"
+          }
+        },
+        "instructor": {
+          "@id": "https://yoavrosenberg.com/#yoav"
+        }
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "ילדים בגילאי 9–13"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://yoavrosenberg.com/workshop-ishit.html#course",
+      "name": "סדנת משחק אישית אחד על אחד",
+      "description": "5 מפגשים אישיים בני שעה עם תוכנית עבודה שנבנית מראש סביב המטרות והחסמים שלכם — ביטחון מול מצלמה, כלים לסצנה, מעבר מתיאטרון למדיום המצולם.",
+      "url": "https://yoavrosenberg.com/workshop-ishit.html",
+      "inLanguage": "he",
+      "provider": {
+        "@id": "https://yoavrosenberg.com/#studio"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "inLanguage": "he",
+        "location": {
+          "@type": "Place",
+          "name": "הסטודיו של יואב רוזנברג",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "שדרות ירושלים 67",
+            "addressLocality": "יפו, תל אביב",
+            "addressCountry": "IL"
+          }
+        },
+        "instructor": {
+          "@id": "https://yoavrosenberg.com/#yoav"
+        },
+        "courseWorkload": "PT5H"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "כל הגילאים"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://yoavrosenberg.com/workshop-audition.html#course",
+      "name": "הכנה לאודישן",
+      "description": "פגישה ממוקדת של כשעה: ניתוח הסצנה, זיקוק הטייק, ובמידת הצורך צילום האודישן באיכות מקצועית.",
+      "url": "https://yoavrosenberg.com/workshop-audition.html",
+      "inLanguage": "he",
+      "provider": {
+        "@id": "https://yoavrosenberg.com/#studio"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "inLanguage": "he",
+        "location": {
+          "@type": "Place",
+          "name": "הסטודיו של יואב רוזנברג",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "שדרות ירושלים 67",
+            "addressLocality": "יפו, תל אביב",
+            "addressCountry": "IL"
+          }
+        },
+        "instructor": {
+          "@id": "https://yoavrosenberg.com/#yoav"
+        },
+        "courseWorkload": "PT1H"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "כל הגילאים והרמות"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "300",
+        "priceCurrency": "ILS",
+        "availability": "https://schema.org/InStock",
+        "url": "https://yoavrosenberg.com/workshop-audition.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yoavrosenberg.com/workshops.html#faq",
+      "inLanguage": "he",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "צריך ניסיון קודם במשחק?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "לא. חלק מהתלמידים מגיעים אחרי בית ספר למשחק, חלק מעולם לא עמדו מול מצלמה. השיטה בנויה שכבות — מי שמתחיל מאפס מקבל את היסודות, ומי שכבר משחק מקבל דיוק. אם אתם לא בטוחים לאיזו קבוצה אתם שייכים, תכתבו לי ונדבר על זה לפני שאתם מחליטים."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "כמה אנשים יש בקבוצה?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "קבוצות קטנות בכוונה. הרעיון הוא שכל אחד יעבוד מול המצלמה בכל מפגש ויקבל התייחסות אישית — לא לשבת בצד ולצפות באחרים רוב הזמן. זו גם הסיבה שהמקומות נגמרים מהר יחסית."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "מה ההבדל בין הקורס השנתי לסדנה של 8 מפגשים?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "הסדנה נותנת לכם את השיטה ואת הכלים — מספיק כדי לגשת לאודישן הבא אחרת לגמרי. הקורס השנתי הוא מה שקורה כשלא עוצרים: הכלים מפסיקים להיות \"מה שלמדתי בסדנה\" והופכים לשפה שאתם חושבים בה. אם אתם מכוונים למקצוע ולא לטעימה — זה המסלול."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "מה צריך להביא למפגש?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "את עצמכם, בגדים נוחים שאפשר לזוז בהם, ואם כבר יש לכם טקסט או סצנה שאתם עובדים עליהם — תביאו. את הציוד, המצלמה והתאורה אני מספק."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "מה קורה אם פספסתי מפגש?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "קורה, וזה בסדר. תעדכנו אותי מראש כשאתם יכולים, ונשלים את החומר — בין אם בהשלמה אישית קצרה או בהצטרפות למפגש מקביל, לפי מה שרלוונטי באותו מחזור."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אני מקבל/ת את הסרטונים שצילמנו?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן. אתם מקבלים את החומר המצולם שלכם — גם כדי לראות את ההתקדמות לאורך התהליך, וגם כי טייק טוב מהסדנה הוא חומר שאפשר להשתמש בו. בהכנה לאודישן זה בכלל התוצר: אתם יוצאים עם אודישן מצולם מוכן לשליחה."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "מתי נפתח המחזור הבא?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "תאריכי הפתיחה משתנים ממחזור למחזור. שלחו לי הודעה ואעדכן אתכם מה נפתח בקרוב ומה מתאים לכם — וגם אם המחזור הנוכחי כבר מלא, אני שומר לכם מקום בתור לבא."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "מה קורה אחרי שהסדנה נגמרת?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כל מי שעובר סדנה נכנס לקהילת \"בחירה חופשית\" — עדכונים על מה שנפתח לפני כולם, הטבות לחברי הקהילה, מפגשי אורח עם אנשי מקצוע מהתעשייה, ורשת של שחקנים שעברו את אותו תהליך. הדלת נשארת פתוחה גם אחרי המפגש האחרון."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "איפה הסטודיו ואיך מגיעים?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "שדרות ירושלים 67, יפו — ליד תחנת הרכבת הקלה בלומפילד, כך שאפשר להגיע בקלות בתחבורה ציבורית. למי שמגיע ברכב יש חניון חינם במרחק 7 דקות הליכה."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body class="font-sans">
+<a href="#main" class="skip-link">דלגו לתוכן הראשי</a>
+
 
 <!-- ===================== HEADER ===================== -->
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-700 bg-transparent py-7">
@@ -55,12 +406,12 @@
           <svg data-chevron width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div data-dropdown-menu class="hidden absolute top-full right-0 mt-4 w-64 bg-paper border border-charcoal/10 shadow-xl shadow-charcoal/5 py-2">
-          <a href="workshop-shnati.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold hover:bg-cream transition-colors">הקורס השנתי</a>
-          <a href="workshop-bogrim.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold hover:bg-cream transition-colors">"בחירה חופשית" · בוגרים</a>
-          <a href="workshop-noar.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold hover:bg-cream transition-colors">"בחירה חופשית" · נוער</a>
-          <a href="workshop-yeladim.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold hover:bg-cream transition-colors">"בחירה חופשית" · ילדים</a>
-          <a href="workshop-ishit.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold hover:bg-cream transition-colors">סדנה אישית אחד על אחד</a>
-          <a href="workshop-audition.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold hover:bg-cream transition-colors">הכנה לאודישן</a>
+          <a href="workshop-shnati.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">הקורס השנתי</a>
+          <a href="workshop-bogrim.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">"בחירה חופשית" · בוגרים</a>
+          <a href="workshop-noar.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">"בחירה חופשית" · נוער</a>
+          <a href="workshop-yeladim.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">"בחירה חופשית" · ילדים</a>
+          <a href="workshop-ishit.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">סדנה אישית אחד על אחד</a>
+          <a href="workshop-audition.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">הכנה לאודישן</a>
         </div>
       </div>
       <a href="about.html" class="ul-grow text-[13.5px] tracking-wide text-charcoal/65 hover:text-charcoal transition-colors duration-500">אודות</a>
@@ -69,7 +420,7 @@
     </nav>
     <div class="flex items-center gap-4">
       <!-- כפתור outline במקום מלא -->
-      <a data-wa href="#" class="hidden sm:inline-flex items-center rounded-none border border-gold text-gold px-6 py-2.5 text-[13px] font-500 tracking-wide hover:bg-gold hover:text-ink transition-colors duration-500">להרשמה לסדנה</a>
+      <a data-wa href="#" class="hidden sm:inline-flex items-center rounded-none btn-ghost px-6 py-2.5 text-[13px] font-500 tracking-wide  transition-colors duration-500">להרשמה לסדנה</a>
       <button id="menu-toggle" class="md:hidden text-charcoal p-2 -m-2" aria-label="תפריט" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -98,7 +449,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
   <!-- ===================== PAGE HEADER ===================== -->
   <section class="bg-cream pt-28 sm:pt-40 pb-10 sm:pb-16">
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12">
@@ -107,7 +458,7 @@
         הסדנאות<br/>והשיעורים
       </h1>
       <p class="reveal mt-8 sm:mt-10 text-lg sm:text-2xl font-300 text-charcoal/70 leading-relaxed max-w-2xl">
-        כל המסלולים עובדים בשיטת <span class="text-gold font-500">"בחירה חופשית"</span> — אותו עיקרון, מותאם לכל קבוצת גיל. מהקורס השנתי המלא ועד סדנה אישית והכנה ממוקדת לאודישן.
+        כל המסלולים עובדים בשיטת <span class="text-gold-ink font-500">"בחירה חופשית"</span> — אותו עיקרון, מותאם לכל קבוצת גיל. מהקורס השנתי המלא ועד סדנה אישית והכנה ממוקדת לאודישן.
       </p>
     </div>
   </section>
@@ -119,26 +470,26 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 grid lg:grid-cols-12 gap-y-7 gap-x-12">
       <div class="reveal lg:col-span-5">
         <div class="flex items-center gap-3 flex-wrap">
-          <span class="text-[13px] text-charcoal/55">18+ · תהליך שנתי</span>
+          <span class="text-[13px] text-charcoal/65">18+ · תהליך שנתי</span>
           <span class="badge-recommended">התהליך המלא</span>
         </div>
-        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-shnati.html" class="hover:text-gold transition-colors duration-500">הקורס השנתי</a></h2>
-        <a href="workshop-shnati.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold">לעמוד הקורס<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-shnati.html" class="hover:text-gold-ink transition-colors duration-500">הקורס השנתי</a></h2>
+        <a href="workshop-shnati.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold-ink">לעמוד הקורס<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
         <dl class="mt-8 space-y-3 text-sm border-t border-charcoal/10 pt-6">
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">פורמט</dt><dd class="text-charcoal/85 text-left">תהליך שנתי · פעם בשבוע</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">מיקום</dt><dd class="text-charcoal/85 text-left">הסטודיו · שד' ירושלים 67, יפו</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">פורמט</dt><dd class="text-charcoal/85 text-left">תהליך שנתי · פעם בשבוע</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">מיקום</dt><dd class="text-charcoal/85 text-left">הסטודיו · שד' ירושלים 67, יפו</dd></div>
         </dl>
       </div>
       <div class="reveal lg:col-span-7 lg:pr-8">
         <p class="text-xl sm:text-2xl font-300 text-charcoal/80 leading-relaxed">שנה שלמה איתי, בלי לעצור. לא באים ללמוד כלים ושוכחים אותם עד המפגש הבא — באים עד שהם הופכים לחלק מכם. מספיק זמן באמת להשתפר, לא רק לטעום.</p>
         <ul class="mt-6 space-y-2.5 text-base font-300 text-charcoal/70">
-          <li class="flex gap-3"><span class="text-gold mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>השיטה מהיסוד — גבולות וחופש, לאורך שנה</li>
-          <li class="flex gap-3"><span class="text-gold mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>עבודה מתמשכת מול מצלמה</li>
-          <li class="flex gap-3"><span class="text-gold mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>מפגשי אורח עם אנשי מקצוע מהתעשייה</li>
-          <li class="flex gap-3"><span class="text-gold mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>כניסה לקהילת "בחירה חופשית"</li>
+          <li class="flex gap-3"><span class="text-gold-ink mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>השיטה מהיסוד — גבולות וחופש, לאורך שנה</li>
+          <li class="flex gap-3"><span class="text-gold-ink mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>עבודה מתמשכת מול מצלמה</li>
+          <li class="flex gap-3"><span class="text-gold-ink mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>מפגשי אורח עם אנשי מקצוע מהתעשייה</li>
+          <li class="flex gap-3"><span class="text-gold-ink mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>כניסה לקהילת "בחירה חופשית"</li>
         </ul>
-        <p class="mt-6 text-sm font-300 text-charcoal/45">המקומות מוגבלים, אז אם זה מדבר אליכם — תכתבו לי מוקדם.</p>
-        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על הקורס השנתי." href="#" class="group mt-7 inline-flex items-center gap-4 rounded-none bg-gold text-ink px-9 py-4 text-base font-500 hover:bg-gold-lit transition-colors duration-500">
+        <p class="mt-6 text-sm font-300 text-charcoal/65">המקומות מוגבלים, אז אם זה מדבר אליכם — תכתבו לי מוקדם.</p>
+        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על הקורס השנתי." href="#" class="group mt-7 inline-flex items-center gap-4 rounded-none btn-primary px-9 py-4 text-base font-500 transition-colors duration-500">
           צרו קשר לפרטים
           <span class="transition-transform duration-500 group-hover:-translate-x-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
         </a>
@@ -151,24 +502,24 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 grid lg:grid-cols-12 gap-y-7 gap-x-12">
       <div class="reveal lg:col-span-5">
         <div class="flex items-center gap-3 flex-wrap">
-          <span class="text-[13px] text-charcoal/55">גילאי 18+</span>        </div>
-        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-bogrim.html" class="hover:text-gold transition-colors duration-500">"בחירה חופשית"<br/>בוגרים</a></h2>
-        <a href="workshop-bogrim.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+          <span class="text-[13px] text-charcoal/65">גילאי 18+</span>        </div>
+        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-bogrim.html" class="hover:text-gold-ink transition-colors duration-500">"בחירה חופשית"<br/>בוגרים</a></h2>
+        <a href="workshop-bogrim.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold-ink">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
         <dl class="mt-8 space-y-3 text-sm border-t border-charcoal/10 pt-6">
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">פורמט</dt><dd class="text-charcoal/85 text-left">8 מפגשים · 3 שעות · פעם בשבוע · ערב</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">מיקום</dt><dd class="text-charcoal/85 text-left">הסטודיו · שד' ירושלים 67, יפו</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">פורמט</dt><dd class="text-charcoal/85 text-left">8 מפגשים · 3 שעות · פעם בשבוע · ערב</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">מיקום</dt><dd class="text-charcoal/85 text-left">הסטודיו · שד' ירושלים 67, יפו</dd></div>
         </dl>
       </div>
       <div class="reveal lg:col-span-7 lg:pr-8">
         <p class="text-xl sm:text-2xl font-300 text-charcoal/80 leading-relaxed">לשחקנים מגיל 18+ שרוצים לקחת את המשחק שלהם צעד קדימה — בלי ללכת לבית ספר למשחק של 3 שנים. תלמדו את השיטה מהיסוד: איך לנתח סצנה, איך להביא את האמת שלכם לתוכה, ואיך להגיע לטייק ייחודי שהוא שלכם.</p>
         <ul class="mt-6 space-y-2.5 text-base font-300 text-charcoal/70">
-          <li class="flex gap-3"><span class="text-gold mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>ניתוח סצנות וסימולציות אודישן מצולמות</li>
-          <li class="flex gap-3"><span class="text-gold mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>קולבאק ומאצ'ינג</li>
-          <li class="flex gap-3"><span class="text-gold mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>למצוא ולהביא את האמת שלכם לסצנה</li>
-          <li class="flex gap-3"><span class="text-gold mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>כניסה לקהילת "בחירה חופשית"</li>
+          <li class="flex gap-3"><span class="text-gold-ink mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>ניתוח סצנות וסימולציות אודישן מצולמות</li>
+          <li class="flex gap-3"><span class="text-gold-ink mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>קולבאק ומאצ'ינג</li>
+          <li class="flex gap-3"><span class="text-gold-ink mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>למצוא ולהביא את האמת שלכם לסצנה</li>
+          <li class="flex gap-3"><span class="text-gold-ink mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>כניסה לקהילת "בחירה חופשית"</li>
         </ul>
-        <p class="mt-6 text-sm font-300 text-charcoal/45">תאריכי הפתיחה משתנים ממחזור למחזור — פשוט תכתבו לי.</p>
-        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על סדנת 'בחירה חופשית' לבוגרים (18+)." href="#" class="group mt-7 inline-flex items-center gap-4 rounded-none bg-gold text-ink px-9 py-4 text-base font-500 hover:bg-gold-lit transition-colors duration-500">
+        <p class="mt-6 text-sm font-300 text-charcoal/65">תאריכי הפתיחה משתנים ממחזור למחזור — פשוט תכתבו לי.</p>
+        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על סדנת 'בחירה חופשית' לבוגרים (18+)." href="#" class="group mt-7 inline-flex items-center gap-4 rounded-none btn-primary px-9 py-4 text-base font-500 transition-colors duration-500">
           צרו קשר לפרטים
           <span class="transition-transform duration-500 group-hover:-translate-x-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
         </a>
@@ -181,14 +532,14 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 grid lg:grid-cols-12 gap-y-7 gap-x-12">
       <div class="reveal lg:col-span-5">
         <div class="flex items-center gap-3">
-          <span class="text-[13px] text-charcoal/55">גילאי 14–17</span>
+          <span class="text-[13px] text-charcoal/65">גילאי 14–17</span>
         </div>
-        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-noar.html" class="hover:text-gold transition-colors duration-500">"בחירה חופשית"<br/>נוער</a></h2>
-        <a href="workshop-noar.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-noar.html" class="hover:text-gold-ink transition-colors duration-500">"בחירה חופשית"<br/>נוער</a></h2>
+        <a href="workshop-noar.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold-ink">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
         <dl class="mt-8 space-y-3 text-sm border-t border-charcoal/10 pt-6">
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">פורמט</dt><dd class="text-charcoal/85 text-left">8 מפגשים · 2 שעות 45 דק'</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">בחופש</dt><dd class="text-charcoal/85 text-left">פעמיים בשבוע · בוקר</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">בלימודים</dt><dd class="text-charcoal/85 text-left">פעם בשבוע · אחה"צ</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">פורמט</dt><dd class="text-charcoal/85 text-left">8 מפגשים · 2 שעות 45 דק'</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">בחופש</dt><dd class="text-charcoal/85 text-left">פעמיים בשבוע · בוקר</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">בלימודים</dt><dd class="text-charcoal/85 text-left">פעם בשבוע · אחה"צ</dd></div>
         </dl>
       </div>
       <div class="reveal lg:col-span-7 lg:pr-8">
@@ -196,8 +547,8 @@
         <ul class="mt-6 space-y-2.5 text-base font-300 text-charcoal/70">
           <li class="flex gap-3"><span class="mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>כניסה לקהילת "בחירה חופשית"</li>
         </ul>
-        <p class="mt-6 text-sm font-300 text-charcoal/45">תאריכי הפתיחה משתנים ממחזור למחזור — פשוט תכתבו לי.</p>
-        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על סדנת 'בחירה חופשית' לנוער (14-17)." href="#" class="group mt-7 inline-flex items-center gap-3 text-base font-500 text-gold hover:text-charcoal transition-colors duration-500">
+        <p class="mt-6 text-sm font-300 text-charcoal/65">תאריכי הפתיחה משתנים ממחזור למחזור — פשוט תכתבו לי.</p>
+        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על סדנת 'בחירה חופשית' לנוער (14-17)." href="#" class="group mt-7 inline-flex items-center gap-3 text-base font-500 text-gold-ink hover:text-charcoal transition-colors duration-500">
           <span class="ul-grow">צרו קשר לפרטים</span>
           <span class="transition-transform duration-500 group-hover:-translate-x-1.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
         </a>
@@ -210,14 +561,14 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 grid lg:grid-cols-12 gap-y-7 gap-x-12">
       <div class="reveal lg:col-span-5">
         <div class="flex items-center gap-3">
-          <span class="text-[13px] text-charcoal/55">גילאי 9–13</span>
+          <span class="text-[13px] text-charcoal/65">גילאי 9–13</span>
         </div>
-        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-yeladim.html" class="hover:text-gold transition-colors duration-500">"בחירה חופשית"<br/>ילדים</a></h2>
-        <a href="workshop-yeladim.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-yeladim.html" class="hover:text-gold-ink transition-colors duration-500">"בחירה חופשית"<br/>ילדים</a></h2>
+        <a href="workshop-yeladim.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold-ink">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
         <dl class="mt-8 space-y-3 text-sm border-t border-charcoal/10 pt-6">
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">פורמט</dt><dd class="text-charcoal/85 text-left">5 מפגשים רצופים · א'–ה'</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">בחופש</dt><dd class="text-charcoal/85 text-left">שעות בוקר</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">בלימודים</dt><dd class="text-charcoal/85 text-left">שעות אחה"צ</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">פורמט</dt><dd class="text-charcoal/85 text-left">5 מפגשים רצופים · א'–ה'</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">בחופש</dt><dd class="text-charcoal/85 text-left">שעות בוקר</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">בלימודים</dt><dd class="text-charcoal/85 text-left">שעות אחה"צ</dd></div>
         </dl>
       </div>
       <div class="reveal lg:col-span-7 lg:pr-8">
@@ -225,8 +576,8 @@
         <ul class="mt-6 space-y-2.5 text-base font-300 text-charcoal/70">
           <li class="flex gap-3"><span class="mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>כניסה לקהילת "בחירה חופשית"</li>
         </ul>
-        <p class="mt-6 text-sm font-300 text-charcoal/45">תאריכי הפתיחה משתנים ממחזור למחזור — פשוט תכתבו לי.</p>
-        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על סדנת 'בחירה חופשית' לילדים (9-13)." href="#" class="group mt-7 inline-flex items-center gap-3 text-base font-500 text-gold hover:text-charcoal transition-colors duration-500">
+        <p class="mt-6 text-sm font-300 text-charcoal/65">תאריכי הפתיחה משתנים ממחזור למחזור — פשוט תכתבו לי.</p>
+        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על סדנת 'בחירה חופשית' לילדים (9-13)." href="#" class="group mt-7 inline-flex items-center gap-3 text-base font-500 text-gold-ink hover:text-charcoal transition-colors duration-500">
           <span class="ul-grow">צרו קשר לפרטים</span>
           <span class="transition-transform duration-500 group-hover:-translate-x-1.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
         </a>
@@ -239,14 +590,14 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 grid lg:grid-cols-12 gap-y-7 gap-x-12">
       <div class="reveal lg:col-span-5">
         <div class="flex items-center gap-3">
-          <span class="text-[13px] text-charcoal/55">כל גיל · 5 מפגשים</span>
+          <span class="text-[13px] text-charcoal/65">כל גיל · 5 מפגשים</span>
         </div>
-        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-ishit.html" class="hover:text-gold transition-colors duration-500">סדנה אישית<br/>אחד על אחד</a></h2>
-        <a href="workshop-ishit.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-ishit.html" class="hover:text-gold-ink transition-colors duration-500">סדנה אישית<br/>אחד על אחד</a></h2>
+        <a href="workshop-ishit.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold-ink">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
         <dl class="mt-8 space-y-3 text-sm border-t border-charcoal/10 pt-6">
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">פורמט</dt><dd class="text-charcoal/85 text-left">5 מפגשים · שעה · פעם בשבוע</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">מיקום</dt><dd class="text-charcoal/85 text-left">הסטודיו · שד' ירושלים 67, יפו</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">תיאום</dt><dd class="text-charcoal/85 text-left">לפי תיאום אישי</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">פורמט</dt><dd class="text-charcoal/85 text-left">5 מפגשים · שעה · פעם בשבוע</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">מיקום</dt><dd class="text-charcoal/85 text-left">הסטודיו · שד' ירושלים 67, יפו</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">תיאום</dt><dd class="text-charcoal/85 text-left">לפי תיאום אישי</dd></div>
         </dl>
       </div>
       <div class="reveal lg:col-span-7 lg:pr-8">
@@ -257,7 +608,7 @@
           <li class="flex gap-3"><span class="mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>כלים להתמודדות עם סצנה</li>
           <li class="flex gap-3"><span class="mt-1.5 flex-none w-1.5 h-1.5 rounded-full bg-gold"></span>מעבר מתיאטרון למדיום המצולם ולעולם האודישנים</li>
         </ul>
-        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על הסדנה האישית אחד על אחד." href="#" class="group mt-7 inline-flex items-center gap-3 text-base font-500 text-gold hover:text-charcoal transition-colors duration-500">
+        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על הסדנה האישית אחד על אחד." href="#" class="group mt-7 inline-flex items-center gap-3 text-base font-500 text-gold-ink hover:text-charcoal transition-colors duration-500">
           <span class="ul-grow">צרו קשר לפרטים</span>
           <span class="transition-transform duration-500 group-hover:-translate-x-1.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
         </a>
@@ -270,23 +621,23 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 grid lg:grid-cols-12 gap-y-7 gap-x-12">
       <div class="reveal lg:col-span-5">
         <div class="flex items-center gap-3">
-          <span class="text-[13px] text-charcoal/55">כל גיל ורמה</span>
+          <span class="text-[13px] text-charcoal/65">כל גיל ורמה</span>
         </div>
-        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-audition.html" class="hover:text-gold transition-colors duration-500">הכנה<br/>לאודישן</a></h2>
-        <a href="workshop-audition.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+        <h2 class="mt-3 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2rem,5.5vw,4rem)]"><a href="workshop-audition.html" class="hover:text-gold-ink transition-colors duration-500">הכנה<br/>לאודישן</a></h2>
+        <a href="workshop-audition.html" class="ul-grow mt-4 inline-flex items-center gap-2 text-sm font-500 text-gold-ink">לעמוד הסדנה<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
         <figure class="relative overflow-hidden bg-charcoal mt-7 max-w-sm rounded-lg" style="aspect-ratio:4/3">
           <img src="assets/acting-monitor.jpg" alt="צילום אודישן מקצועי על מוניטור בסט" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" style="object-position:50% 32%" />
           <figcaption class="absolute bottom-3 right-3 text-[11px] tracking-wide text-paper bg-ink/60 px-2.5 py-1">מהסט</figcaption>
         </figure>
         <dl class="mt-7 space-y-3 text-sm border-t border-charcoal/10 pt-6">
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">פורמט</dt><dd class="text-charcoal/85 text-left">פגישה אחת · כשעה · לפי דרישה</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-charcoal/45">מחיר</dt><dd class="text-gold font-500 text-left">300 ₪</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">פורמט</dt><dd class="text-charcoal/85 text-left">פגישה אחת · כשעה · לפי דרישה</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-charcoal/65">מחיר</dt><dd class="text-gold-ink font-500 text-left">300 ₪</dd></div>
         </dl>
       </div>
       <div class="reveal lg:col-span-7 lg:pr-8">
         <p class="text-xl sm:text-2xl font-300 text-charcoal/80 leading-relaxed">יש לכם אודישן מצולם לשלוח, או הזמינו אתכם לאודישן פרונטלי? מגיעים עם הסצנה — וביחד עובדים על ניתוח הסצנה, מזקקים את הטייק, ואם צריך מצלמים את האודישן.</p>
         <p class="mt-5 text-base font-300 text-charcoal/70 leading-relaxed">מטרה אחת: להגיע לאודישן כשאתם יודעים בדיוק מה אתם עושים ולמה.</p>
-        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על הכנה לאודישן." href="#" class="group mt-7 inline-flex items-center gap-3 text-base font-500 text-gold hover:text-charcoal transition-colors duration-500">
+        <a data-wa data-wa-msg="היי יואב, אשמח לפרטים על הכנה לאודישן." href="#" class="group mt-7 inline-flex items-center gap-3 text-base font-500 text-gold-ink hover:text-charcoal transition-colors duration-500">
           <span class="ul-grow">צרו קשר לפרטים</span>
           <span class="transition-transform duration-500 group-hover:-translate-x-1.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
         </a>
@@ -308,19 +659,19 @@
         <div class="reveal lg:col-span-7 lg:pr-8 grid sm:grid-cols-2 gap-x-10 gap-y-8">
           <div>
             <h3 class="font-500 text-charcoal text-lg">לדעת ראשונים</h3>
-            <p class="mt-2 text-base font-300 text-charcoal/60 leading-relaxed">על פתיחת סדנאות חדשות — לפני כולם.</p>
+            <p class="mt-2 text-base font-300 text-charcoal/65 leading-relaxed">על פתיחת סדנאות חדשות — לפני כולם.</p>
           </div>
           <div>
             <h3 class="font-500 text-charcoal text-lg">הטבות בלעדיות</h3>
-            <p class="mt-2 text-base font-300 text-charcoal/60 leading-relaxed">לחברי הקהילה בלבד.</p>
+            <p class="mt-2 text-base font-300 text-charcoal/65 leading-relaxed">לחברי הקהילה בלבד.</p>
           </div>
           <div>
             <h3 class="font-500 text-charcoal text-lg">מפגשי אורח</h3>
-            <p class="mt-2 text-base font-300 text-charcoal/60 leading-relaxed">עם אנשי מקצוע מהתעשייה — מלהקות, עוזרות במאי, שחקנים ועוד.</p>
+            <p class="mt-2 text-base font-300 text-charcoal/65 leading-relaxed">עם אנשי מקצוע מהתעשייה — מלהקות, עוזרות במאי, שחקנים ועוד.</p>
           </div>
           <div>
             <h3 class="font-500 text-charcoal text-lg">רשת תמיכה</h3>
-            <p class="mt-2 text-base font-300 text-charcoal/60 leading-relaxed">שחקנים מכל הגילאים והרמות שעברו את התהליך.</p>
+            <p class="mt-2 text-base font-300 text-charcoal/65 leading-relaxed">שחקנים מכל הגילאים והרמות שעברו את התהליך.</p>
           </div>
         </div>
       </div>
@@ -331,22 +682,76 @@
   <section class="bg-cream py-12 sm:py-20 border-t border-charcoal/10">
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 reveal grid sm:grid-cols-3 gap-y-6 gap-x-8 items-baseline">
       <div>
-        <span class="text-[13px] font-500 text-gold-deep">הסטודיו</span>
+        <span class="text-[13px] font-500 text-gold-ink">הסטודיו</span>
         <p class="mt-2 text-xl font-500 text-charcoal">שדרות ירושלים 67, יפו</p>
       </div>
       <div>
-        <span class="text-[13px] font-500 text-gold-deep">תחבורה</span>
+        <span class="text-[13px] font-500 text-gold-ink">תחבורה</span>
         <p class="mt-2 text-base font-300 text-charcoal/70">ליד תחנת רכבת קלה בלומפילד</p>
       </div>
       <div>
-        <span class="text-[13px] font-500 text-gold-deep">חנייה</span>
+        <span class="text-[13px] font-500 text-gold-ink">חנייה</span>
         <p class="mt-2 text-base font-300 text-charcoal/70">חניון חינמי, 7 דקות הליכה</p>
       </div>
     </div>
   </section>
 
+  <!-- ===================== FAQ =====================
+       The objections that actually stall a signup. Mirrored into the
+       FAQPage JSON-LD in <head> — keep the two in sync when editing. -->
+  <section id="faq" class="bg-paper py-14 sm:py-28 border-t border-charcoal/10">
+    <div class="mx-auto max-w-[88rem] px-6 sm:px-12">
+      <div class="reveal grid lg:grid-cols-12 items-end gap-y-5 gap-x-12 mb-10 sm:mb-14">
+        <div class="lg:col-span-7">
+          <span class="kicker">שאלות נפוצות</span>
+          <h2 class="mt-7 font-700 tracking-tight leading-[1.05] text-charcoal text-[clamp(1.9rem,4.5vw,3.25rem)]">מה ששואלים אותי לפני שנרשמים</h2>
+        </div>
+        <p class="lg:col-span-5 text-lg font-300 text-charcoal/65 leading-relaxed">ואם השאלה שלכם לא כאן — פשוט תכתבו לי, אני עונה בעצמי.</p>
+      </div>
+
+      <div class="reveal">
+        <details class="faq-item">
+          <summary class="faq-q">צריך ניסיון קודם במשחק?</summary>
+          <div class="faq-a">לא. חלק מהתלמידים מגיעים אחרי בית ספר למשחק, חלק מעולם לא עמדו מול מצלמה. השיטה בנויה שכבות — מי שמתחיל מאפס מקבל את היסודות, ומי שכבר משחק מקבל דיוק. אם אתם לא בטוחים לאיזו קבוצה אתם שייכים, תכתבו לי ונדבר על זה לפני שאתם מחליטים.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">כמה אנשים יש בקבוצה?</summary>
+          <div class="faq-a">קבוצות קטנות בכוונה. הרעיון הוא שכל אחד יעבוד מול המצלמה בכל מפגש ויקבל התייחסות אישית — לא לשבת בצד ולצפות באחרים רוב הזמן. זו גם הסיבה שהמקומות נגמרים מהר יחסית.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">מה ההבדל בין הקורס השנתי לסדנה של 8 מפגשים?</summary>
+          <div class="faq-a">הסדנה נותנת לכם את השיטה ואת הכלים — מספיק כדי לגשת לאודישן הבא אחרת לגמרי. הקורס השנתי הוא מה שקורה כשלא עוצרים: הכלים מפסיקים להיות "מה שלמדתי בסדנה" והופכים לשפה שאתם חושבים בה. אם אתם מכוונים למקצוע ולא לטעימה — זה המסלול.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">מה צריך להביא למפגש?</summary>
+          <div class="faq-a">את עצמכם, בגדים נוחים שאפשר לזוז בהם, ואם כבר יש לכם טקסט או סצנה שאתם עובדים עליהם — תביאו. את הציוד, המצלמה והתאורה אני מספק.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">מה קורה אם פספסתי מפגש?</summary>
+          <div class="faq-a">קורה, וזה בסדר. תעדכנו אותי מראש כשאתם יכולים, ונשלים את החומר — בין אם בהשלמה אישית קצרה או בהצטרפות למפגש מקביל, לפי מה שרלוונטי באותו מחזור.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">אני מקבל/ת את הסרטונים שצילמנו?</summary>
+          <div class="faq-a">כן. אתם מקבלים את החומר המצולם שלכם — גם כדי לראות את ההתקדמות לאורך התהליך, וגם כי טייק טוב מהסדנה הוא חומר שאפשר להשתמש בו. בהכנה לאודישן זה בכלל התוצר: אתם יוצאים עם אודישן מצולם מוכן לשליחה.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">מתי נפתח המחזור הבא?</summary>
+          <div class="faq-a">תאריכי הפתיחה משתנים ממחזור למחזור. שלחו לי הודעה ואעדכן אתכם מה נפתח בקרוב ומה מתאים לכם — וגם אם המחזור הנוכחי כבר מלא, אני שומר לכם מקום בתור לבא.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">מה קורה אחרי שהסדנה נגמרת?</summary>
+          <div class="faq-a">כל מי שעובר סדנה נכנס לקהילת "בחירה חופשית" — עדכונים על מה שנפתח לפני כולם, הטבות לחברי הקהילה, מפגשי אורח עם אנשי מקצוע מהתעשייה, ורשת של שחקנים שעברו את אותו תהליך. הדלת נשארת פתוחה גם אחרי המפגש האחרון.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">איפה הסטודיו ואיך מגיעים?</summary>
+          <div class="faq-a">שדרות ירושלים 67, יפו — ליד תחנת הרכבת הקלה בלומפילד, כך שאפשר להגיע בקלות בתחבורה ציבורית. למי שמגיע ברכב יש חניון חינם במרחק 7 דקות הליכה.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== CTA ===================== -->
-  <section class="bg-paper border-t border-charcoal/10">
+  <section class="bg-cream border-t border-charcoal/10">
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 pt-20 sm:pt-36 pb-20 sm:pb-32">
       <div class="reveal grid lg:grid-cols-12 items-end gap-y-10 gap-x-12">
         <div class="lg:col-span-8">
@@ -354,7 +759,7 @@
         </div>
         <div class="lg:col-span-4">
           <p class="text-lg sm:text-xl font-300 text-charcoal/65 leading-relaxed mb-8">כתבו לי כמה מילים על איפה אתם נמצאים — ואכוון אתכם למסלול הנכון.</p>
-          <a data-wa href="#" class="group inline-flex items-center gap-4 rounded-none bg-gold text-ink px-9 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-500 hover:bg-gold-lit transition-colors duration-500">
+          <a data-wa href="#" class="group inline-flex items-center gap-4 rounded-none btn-primary px-9 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-500 transition-colors duration-500">
             דברו איתי בוואטסאפ
             <span class="transition-transform duration-500 group-hover:-translate-x-2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
           </a>
@@ -372,16 +777,24 @@
       <img src="assets/logo-full.png" alt="בחירה חופשית — יואב רוזנברג" class="h-14 w-auto opacity-90" />
       <span class="text-base font-700 tracking-wide text-charcoal">יואב רוזנברג</span>
     </a>
-    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[13px] text-charcoal/60">
-      <a href="workshops.html" class="ul-grow hover:text-gold transition-colors duration-500">הסדנאות</a>
-      <a href="about.html" class="ul-grow hover:text-gold transition-colors duration-500">אודות</a>
-      <a href="testimonials.html" class="ul-grow hover:text-gold transition-colors duration-500">המלצות</a>
-      <a href="contact.html" class="ul-grow hover:text-gold transition-colors duration-500">צור קשר</a>
+    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[13px] text-charcoal/65">
+      <a href="workshops.html" class="ul-grow hover:text-gold-ink transition-colors duration-500">הסדנאות</a>
+      <a href="about.html" class="ul-grow hover:text-gold-ink transition-colors duration-500">אודות</a>
+      <a href="testimonials.html" class="ul-grow hover:text-gold-ink transition-colors duration-500">המלצות</a>
+      <a href="contact.html" class="ul-grow hover:text-gold-ink transition-colors duration-500">צור קשר</a>
     </div>
-    <p class="text-[13px] text-charcoal/40">© 2026 יואב רוזנברג — יפו, תל אביב</p>
+    <p class="text-[13px] text-charcoal/65">© 2026 יואב רוזנברג — יפו, תל אביב</p>
   </div>
 </footer>
 
-<script src="main.js?v=26"></script>
+<!-- ===================== STICKY MOBILE CTA =====================
+     Below md the header's registration button is hidden, so phones had no
+     persistent way to reach Yoav until the footer. -->
+<a data-wa href="#" class="mobile-cta md:hidden">
+  <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.16c-.25.69-1.43 1.32-1.98 1.4-.53.08-1.19.11-1.92-.12-.44-.14-1.01-.33-1.74-.64-3.06-1.32-5.06-4.4-5.21-4.6-.15-.2-1.25-1.66-1.25-3.17s.79-2.25 1.07-2.56c.28-.31.61-.38.81-.38h.58c.19 0 .44-.07.69.53.25.61.86 2.11.94 2.26.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.61.18.3.79 1.3 1.69 2.11 1.16 1.03 2.14 1.35 2.44 1.5.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.31.4-.25.68-.15.28.1 1.77.84 2.07.99.3.15.5.23.58.35.07.13.07.72-.18 1.42Z"/></svg>
+  דברו איתי בוואטסאפ
+</a>
+
+<script src="main.js?v=28"></script>
 </body>
 </html>

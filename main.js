@@ -65,11 +65,10 @@
     /* workshop / teaser rows slide on hover */
     'html.js-fx [data-row]>div{transition:transform .5s cubic-bezier(.16,.84,.44,1);}',
     'html.js-fx [data-row]:hover>div{transform:translateX(-8px);}',
-    /* primary + outline buttons: subtle lift */
-    'html.js-fx a.bg-gold{transition:background-color .5s,color .5s,transform .35s cubic-bezier(.16,.84,.44,1),box-shadow .35s;}',
-    'html.js-fx a.bg-gold:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(200,169,110,.55);}',
-    'html.js-fx a.border-gold{transition:background-color .5s,color .5s,transform .35s cubic-bezier(.16,.84,.44,1);}',
-    'html.js-fx a.border-gold:hover{transform:translateY(-1px);}',
+    /* outline buttons: subtle lift (the filled .btn-primary carries its own
+       hover scale + shadow in tw.css) */
+    'html.js-fx a.btn-ghost{transition:background-color .5s,color .5s,transform .35s cubic-bezier(.16,.84,.44,1);}',
+    'html.js-fx a.btn-ghost:hover{transform:translateY(-1px);}',
     /* dropdown menu pop-in */
     '@keyframes fx-pop{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}',
     /* bridge the visual gap between toggle and panel with an invisible strip,
@@ -91,7 +90,7 @@
     '  html.js-fx [data-row]:hover>div{transform:none;}',
     '  html.js-fx [data-draw]{transform:none!important;}',
     '  html.js-fx [data-line]{clip-path:none!important;transform:none!important;opacity:1!important;}',
-    '  html.js-fx a.bg-gold:hover,html.js-fx a.border-gold:hover{transform:none;box-shadow:none;}',
+    '  html.js-fx a.btn-ghost:hover{transform:none;box-shadow:none;}',
     '}'
   ].join('\n');
 
@@ -404,17 +403,60 @@
 
       /* autoplay: advance one slide every 3.2s, forever, in one direction */
       var timer = null;
-      function advance() {
-        var i = all.indexOf(activeSlide());
-        centerOn(all[i + 1] || all[0], true);
+      var userDrove = false;   /* once someone takes the wheel, stay stopped */
+      function advance(dir) {
+        var i = all.indexOf(activeSlide()) + (dir || 1);
+        centerOn(all[(i + all.length) % all.length], true);
       }
-      function play() { if (reduce || timer) return; timer = setInterval(advance, 3200); }
+      function play() { if (reduce || timer || userDrove) return; timer = setInterval(advance, 3200); }
       function stop() { if (timer) { clearInterval(timer); timer = null; } }
       track.addEventListener('mouseenter', stop);
       track.addEventListener('mouseleave', play);
       track.addEventListener('touchstart', stop, { passive: true });
       track.addEventListener('pointerdown', stop);
       document.addEventListener('visibilitychange', function () { document.hidden ? stop() : play(); });
+
+      /* -----------------------------------------------------------------
+         Controls. The track hides its scrollbar and dims everything that
+         isn't centered, which reads as "faded decoration" rather than
+         "there are 20 more of these" — so the arrows and the counter are
+         what actually tell you the strip has depth. Built here rather than
+         in the markup so all three carousels stay in sync.
+         ----------------------------------------------------------------- */
+      /* stable position per slide: recycle() reorders the DOM, so the
+         counter can't read from DOM order */
+      all.forEach(function (s, i) { s.setAttribute('data-cf-i', i); });
+
+      var ARROW = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>';
+      var ctls = document.createElement('div');
+      ctls.className = 'cf-ctls';
+      ctls.setAttribute('dir', 'ltr');
+      /* mirror the track's own gutters so the controls line up with content */
+      ['px-6', 'sm:px-12'].forEach(function (c) {
+        if (track.classList.contains(c)) ctls.classList.add(c);
+      });
+      ctls.innerHTML =
+        '<button type="button" class="cf-ctl" data-cf-prev aria-label="הקודם">' + ARROW + '</button>' +
+        '<button type="button" class="cf-ctl" data-cf-next aria-label="הבא" style="transform:rotate(180deg)">' + ARROW + '</button>' +
+        '<span class="cf-count" data-cf-count></span>';
+      track.parentNode.insertBefore(ctls, track.nextSibling);
+
+      var countEl = ctls.querySelector('[data-cf-count]');
+      var raf2 = null;
+      function paintCount() {
+        var a = activeSlide();
+        if (a && countEl) countEl.textContent = (+a.getAttribute('data-cf-i') + 1) + ' / ' + all.length;
+      }
+      ctls.querySelector('[data-cf-prev]').addEventListener('click', function () {
+        userDrove = true; stop(); advance(-1);
+      });
+      ctls.querySelector('[data-cf-next]').addEventListener('click', function () {
+        userDrove = true; stop(); advance(1);
+      });
+      track.addEventListener('scroll', function () {
+        if (raf2) return;
+        raf2 = requestAnimationFrame(function () { paintCount(); raf2 = null; });
+      }, { passive: true });
 
       /* click a non-centered slide → go to it (override the generic handler) */
       track.addEventListener('click', function (e) {
@@ -429,6 +471,7 @@
         pad();
         centerOn(all[0], false);
         markActive();
+        paintCount();
       }
       setup();
       setTimeout(setup, 300);          /* re-run after layout/fonts settle */
