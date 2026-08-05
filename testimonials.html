@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/tw.css?v=28" />
+<link rel="stylesheet" href="assets/tw.css?v=29" />
 <style>
   html { scroll-behavior: smooth; }
   body { background: #FAF8F4; color: #1A1A1A; -webkit-font-smoothing: antialiased; }
@@ -108,43 +108,33 @@
     </div>
   </section>
 
-  <!-- ===================== QUOTES CAROUSEL ===================== -->
-  <!-- PLACEHOLDER: replace quotes/names in #tq-data with real testimonials -->
+  <!-- ===================== SCREENSHOT WALL — real WhatsApp messages ===================== -->
   <section class="bg-cream pb-16 sm:pb-28">
     <div class="mx-auto max-w-[80rem] px-6 sm:px-12">
-      <!-- מקור התוכן: עריכת ההמלצות כאן בלבד -->
-      <script type="application/json" id="tq-data">
-      [
-        {"text":"הסדנה של יואב גרמה לי לחשוב אחרת על משחק ולבטא את עצמי בצורה הכי טהורה ואותנטית.","name":"תמיר אביעד","role":"שחקן"},
-        {"text":"אחרי שנים של פחד מאודישנים, לראשונה נכנסתי לחדר עם כלים ברורים ותחושת שליטה. זה שינה הכל.","name":"נועה ברק","role":"שחקנית"},
-        {"text":"יואב יודע לראות בדיוק מה עוצר אותך — ולתת לך את המפתח לשחרר את זה. ליווי נדיר ואמיתי.","name":"דניאל מזרחי","role":"שחקן"},
-        {"text":"בזכות הסדנה הפסקתי \"לנסות לשחק\" והתחלתי פשוט להיות. הביטחון הזה נשאר איתי בכל סט.","name":"[שם התלמיד/ה]","role":"שחקן/ית"}
-      ]
-      </script>
-
-      <figure class="reveal">
-        <blockquote id="tq-quote" class="in min-h-[12rem] sm:min-h-[14rem]">
-          <p id="tq-text" class="tq-border font-300 tracking-tight text-charcoal text-[clamp(1.6rem,4vw,3.2rem)] leading-[1.3] max-w-4xl">הסדנה של יואב גרמה לי לחשוב אחרת על משחק ולבטא את עצמי בצורה הכי טהורה ואותנטית.</p>
-        </blockquote>
-        <figcaption class="mt-10 sm:mt-12 flex items-center justify-between flex-wrap gap-6 border-t border-charcoal/10 pt-8">
-          <div class="flex items-baseline gap-4">
-            <span id="tq-name" class="font-700 text-charcoal text-lg">תמיר אביעד</span>
-            <span id="tq-role" class="text-[13px] text-charcoal/45">שחקן</span>
-          </div>
-          <div class="flex items-center gap-6">
-            <span id="tq-counter" class="text-[13px] tabular-nums text-charcoal/45">01 / 04</span>
-            <div class="flex items-center gap-3">
-              <button id="tq-next" aria-label="הבא" class="rotate-180 grid place-items-center w-11 h-11 border border-charcoal/20 text-charcoal/60 hover:border-gold hover:text-gold transition-colors duration-500">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-              </button>
-              <button id="tq-prev" aria-label="הקודם" class="grid place-items-center w-11 h-11 border border-charcoal/20 text-charcoal/60 hover:border-gold hover:text-gold transition-colors duration-500">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-              </button>
-            </div>
-          </div>
-        </figcaption>
-        <div id="tq-dots" class="mt-8 flex items-center gap-3"></div>
-      </figure>
+      <p class="reveal max-w-2xl text-lg font-300 text-charcoal/60 leading-relaxed mb-10 sm:mb-14">בלי ניסוחים מסודרים — ככה תלמידים כותבים לי, בזמן אמת, אחרי סדנה או אחרי אודישן. (שמות ופרטים מטושטשים לבקשתם.)</p>
+      <div class="columns-2 sm:columns-3 lg:columns-4 gap-4">
+        <a href="assets/rec-1.jpg" data-img-lightbox="assets/rec-1.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:60ms"><img src="assets/rec-1.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-2.jpg" data-img-lightbox="assets/rec-2.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:120ms"><img src="assets/rec-2.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-3.jpg" data-img-lightbox="assets/rec-3.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:180ms"><img src="assets/rec-3.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-4.jpg" data-img-lightbox="assets/rec-4.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:240ms"><img src="assets/rec-4.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-5.jpg" data-img-lightbox="assets/rec-5.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:300ms"><img src="assets/rec-5.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-6.jpg" data-img-lightbox="assets/rec-6.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:0ms"><img src="assets/rec-6.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-7.jpg" data-img-lightbox="assets/rec-7.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:60ms"><img src="assets/rec-7.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-8.jpg" data-img-lightbox="assets/rec-8.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:120ms"><img src="assets/rec-8.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-9.jpg" data-img-lightbox="assets/rec-9.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:180ms"><img src="assets/rec-9.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-10.jpg" data-img-lightbox="assets/rec-10.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:240ms"><img src="assets/rec-10.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-11.jpg" data-img-lightbox="assets/rec-11.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:300ms"><img src="assets/rec-11.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-12.jpg" data-img-lightbox="assets/rec-12.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:0ms"><img src="assets/rec-12.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-13.jpg" data-img-lightbox="assets/rec-13.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:60ms"><img src="assets/rec-13.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-14.jpg" data-img-lightbox="assets/rec-14.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:120ms"><img src="assets/rec-14.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-15.jpg" data-img-lightbox="assets/rec-15.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:180ms"><img src="assets/rec-15.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-16.jpg" data-img-lightbox="assets/rec-16.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:240ms"><img src="assets/rec-16.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-17.jpg" data-img-lightbox="assets/rec-17.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:300ms"><img src="assets/rec-17.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-18.jpg" data-img-lightbox="assets/rec-18.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:0ms"><img src="assets/rec-18.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-19.jpg" data-img-lightbox="assets/rec-19.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:60ms"><img src="assets/rec-19.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-20.jpg" data-img-lightbox="assets/rec-20.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:120ms"><img src="assets/rec-20.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+        <a href="assets/rec-21.jpg" data-img-lightbox="assets/rec-21.jpg" class="reveal group block mb-4 break-inside-avoid overflow-hidden bg-charcoal" style="animation-delay:180ms"><img src="assets/rec-21.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" /></a>
+      </div>
     </div>
   </section>
 
@@ -185,6 +175,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=25"></script>
+<script src="main.js?v=26"></script>
 </body>
 </html>

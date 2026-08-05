@@ -486,6 +486,56 @@
   }
 
   /* =====================================================================
+     Image lightbox: any [data-img-lightbox] opens a centered overlay with
+     the full-size image (its href). Same open/close pattern as the
+     YouTube lightbox above, swapped for an <img>.
+     ===================================================================== */
+  function initImageLightbox() {
+    var triggers = Array.from(document.querySelectorAll('[data-img-lightbox]'));
+    if (!triggers.length) return;
+
+    var overlay = document.createElement('div');
+    overlay.id = 'img-lightbox';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.style.cssText = 'position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(26,26,26,.9);padding:5vw;opacity:0;transition:opacity .3s ease;';
+    overlay.innerHTML =
+      '<button aria-label="סגור" data-img-close style="position:absolute;top:20px;left:20px;width:44px;height:44px;display:grid;place-items:center;background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;">' +
+      '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button>' +
+      '<img data-img-slot alt="" style="max-height:88vh;max-width:100%;width:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);" />';
+    document.body.appendChild(overlay);
+    var slot = overlay.querySelector('[data-img-slot]');
+
+    function open(src, alt) {
+      if (!src) return;
+      slot.src = src;
+      slot.alt = alt || '';
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function () { overlay.style.opacity = '1'; });
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+    function close() {
+      overlay.style.opacity = '0';
+      document.body.style.overflow = '';
+      overlay.setAttribute('aria-hidden', 'true');
+      setTimeout(function () { overlay.style.display = 'none'; slot.src = ''; }, 300);
+    }
+    triggers.forEach(function (t) {
+      t.addEventListener('click', function (e) {
+        e.preventDefault();
+        var img = t.querySelector('img');
+        open(t.getAttribute('data-img-lightbox') || (img && img.src), img && img.alt);
+      });
+    });
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay || e.target.closest('[data-img-close]')) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.style.display === 'flex') close();
+    });
+  }
+
+  /* =====================================================================
      Lazy clips: [data-clip] videos load + play only while in view (paused
      otherwise). Save-Data keeps the poster. Keeps the page light.
      ===================================================================== */
@@ -730,6 +780,7 @@
   initClips();
   initMediaCarousel();
   initYouTube();
+  initImageLightbox();
   initHeadline();
   initDraw();
   initCountUp();
