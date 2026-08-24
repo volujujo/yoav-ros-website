@@ -414,16 +414,10 @@
       }
 
       /* -----------------------------------------------------------------
-         Controls. The track hides its scrollbar and dims everything that
-         isn't centered, which reads as "faded decoration" rather than
-         "there are 20 more of these" — so the arrows and the counter are
-         what actually tell you the strip has depth. Built here rather than
-         in the markup so all three carousels stay in sync.
+         Controls — arrows only (Yoav asked to drop the "3 / 10" counter).
+         Built here rather than in the markup so all the carousels stay
+         in sync.
          ----------------------------------------------------------------- */
-      /* stable position per slide: recycle() reorders the DOM, so the
-         counter can't read from DOM order */
-      all.forEach(function (s, i) { s.setAttribute('data-cf-i', i); });
-
       var ARROW = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>';
       var ctls = document.createElement('div');
       ctls.className = 'cf-ctls';
@@ -434,22 +428,11 @@
       });
       ctls.innerHTML =
         '<button type="button" class="cf-ctl" data-cf-prev aria-label="הקודם">' + ARROW + '</button>' +
-        '<button type="button" class="cf-ctl" data-cf-next aria-label="הבא" style="transform:rotate(180deg)">' + ARROW + '</button>' +
-        '<span class="cf-count" data-cf-count></span>';
+        '<button type="button" class="cf-ctl" data-cf-next aria-label="הבא" style="transform:rotate(180deg)">' + ARROW + '</button>';
       track.parentNode.insertBefore(ctls, track.nextSibling);
 
-      var countEl = ctls.querySelector('[data-cf-count]');
-      var raf2 = null;
-      function paintCount() {
-        var a = activeSlide();
-        if (a && countEl) countEl.textContent = (+a.getAttribute('data-cf-i') + 1) + ' / ' + all.length;
-      }
       ctls.querySelector('[data-cf-prev]').addEventListener('click', function () { advance(-1); });
       ctls.querySelector('[data-cf-next]').addEventListener('click', function () { advance(1); });
-      track.addEventListener('scroll', function () {
-        if (raf2) return;
-        raf2 = requestAnimationFrame(function () { paintCount(); raf2 = null; });
-      }, { passive: true });
 
       /* click a non-centered slide → go to it (override the generic handler) */
       track.addEventListener('click', function (e) {
@@ -464,7 +447,6 @@
         pad();
         centerOn(all[0], false);
         markActive();
-        paintCount();
       }
       setup();
       setTimeout(setup, 300);          /* re-run after layout/fonts settle */
