@@ -5,6 +5,18 @@
 # Redirect the www host to the bare domain (adjust if you prefer www as primary).
 # Netlify also lets you set the primary domain in the dashboard.
 
+# Removed pages (Aug 2026): the kids workshop is gone, and the noar/bogrim
+# workshops merged into one "בחירה חופשית" workshop page.
+[[redirects]]
+  from = "/workshop-noar.html"
+  to = "/workshop-bogrim.html"
+  status = 301
+
+[[redirects]]
+  from = "/workshop-yeladim.html"
+  to = "/workshops.html"
+  status = 301
+
 [[headers]]
   for = "/assets/*"
   [headers.values]

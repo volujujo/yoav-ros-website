@@ -19,11 +19,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/tw.css?v=33" />
+<link rel="stylesheet" href="assets/tw.css?v=35" />
 <style>
   html { scroll-behavior: smooth; }
   body { background: #FAF8F4; color: #1A1A1A; -webkit-font-smoothing: antialiased; }
-  ::selection { background: #C8A96E; color: #0B0B0D; }
+  ::selection { background: #A95142; color: #FFFFFF; }
   .reveal { opacity: 1; }
   @media (prefers-reduced-motion: no-preference) {
     .reveal.in { animation: rise 1s cubic-bezier(.16,.84,.44,1) both; }
@@ -32,8 +32,8 @@
   .ul-grow { background-image: linear-gradient(currentColor,currentColor); background-size: 0% 1px; background-repeat: no-repeat; background-position: 100% 100%; transition: background-size .55s cubic-bezier(.16,.84,.44,1); padding-bottom: 2px; }
   .ul-grow:hover { background-size: 100% 1px; }
   .rule { height: 1px; background: rgba(26,26,26,.14); }
-  .badge-recommended { display: inline-block; border: 1px solid #8A6D3B; color: #8A6D3B; font-size: 10px; padding: 2px 8px; letter-spacing: 0.04em; vertical-align: middle; }
-  .tq-border { border-right: 2px solid #C8A96E; padding-right: 1.5rem; }  [id] { scroll-margin-top: 6rem; }
+  .badge-recommended { display: inline-block; border: 1px solid #A95142; color: #A95142; font-size: 10px; padding: 2px 8px; letter-spacing: 0.04em; vertical-align: middle; }
+  .tq-border { border-right: 2px solid #9C9C9C; padding-right: 1.5rem; }  [id] { scroll-margin-top: 6rem; }
 
   /* center-focus carousel (shared with main.js initMediaCarousel) */
   .cf-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x proximity; padding: 12px 0; direction: ltr; }
@@ -56,7 +56,7 @@
       ],
       "@id": "https://yoavrosenberg.com/#studio",
       "name": "בחירה חופשית — סדנאות משחק של יואב רוזנברג",
-      "description": "סדנאות משחק מול מצלמה בשיטת \"בחירה חופשית\" — לילדים, נוער ובוגרים, סדנאות אישיות והכנה לאודישן. הסטודיו ביפו, תל אביב.",
+      "description": "סדנאות משחק מול מצלמה בשיטת \"בחירה חופשית\" — לנוער ולבוגרים, סדנאות אישיות והכנה לאודישן. הסטודיו ביפו, תל אביב.",
       "url": "https://yoavrosenberg.com/",
       "image": "https://yoavrosenberg.com/assets/og-image.jpg",
       "logo": "https://yoavrosenberg.com/assets/logo-full.png",
@@ -122,22 +122,20 @@
     <nav class="hidden md:flex items-center gap-9">
       <!-- תפריט נפתח: הסדנאות -->
       <div data-dropdown class="relative">
-        <a href="workshops.html" data-dropdown-toggle aria-haspopup="true" aria-expanded="false" class="ul-grow inline-flex items-center gap-1.5 text-[13.5px] tracking-wide text-charcoal/65 hover:text-charcoal transition-colors duration-500">
-          הסדנאות
+        <a href="workshops.html" data-dropdown-toggle aria-haspopup="true" aria-expanded="false" class="ul-grow inline-flex items-center gap-1.5 text-[13.5px] tracking-wide text-charcoal/75 hover:text-charcoal transition-colors duration-500">
+          המסלולים
           <svg data-chevron width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div data-dropdown-menu class="hidden absolute top-full right-0 mt-4 w-64 bg-paper border border-charcoal/10 shadow-xl shadow-charcoal/5 py-2">
-          <a href="workshop-shnati.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">הקורס השנתי</a>
-          <a href="workshop-yeladim.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">"בחירה חופשית" · ילדים</a>
-          <a href="workshop-noar.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">"בחירה חופשית" · נוער</a>
-          <a href="workshop-bogrim.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">"בחירה חופשית" · בוגרים</a>
-          <a href="workshop-ishit.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">סדנה אישית אחד על אחד</a>
-          <a href="workshop-audition.html" class="block px-5 py-3 text-[13.5px] text-charcoal/70 hover:text-gold-ink hover:bg-cream transition-colors">הכנה לאודישן</a>
+          <a href="workshop-shnati.html" class="block px-5 py-3 text-[13.5px] text-charcoal/80 hover:text-burgundy hover:bg-cream transition-colors">הקורס השנתי</a>
+          <a href="workshop-bogrim.html" class="block px-5 py-3 text-[13.5px] text-charcoal/80 hover:text-burgundy hover:bg-cream transition-colors">סדנת "בחירה חופשית"</a>
+          <a href="workshop-ishit.html" class="block px-5 py-3 text-[13.5px] text-charcoal/80 hover:text-burgundy hover:bg-cream transition-colors">סדנה אישית אחד על אחד</a>
+          <a href="workshop-audition.html" class="block px-5 py-3 text-[13.5px] text-charcoal/80 hover:text-burgundy hover:bg-cream transition-colors">הכנה לאודישן</a>
         </div>
       </div>
-      <a href="about.html" class="ul-grow text-[13.5px] tracking-wide text-charcoal/65 hover:text-charcoal transition-colors duration-500">אודות</a>
+      <a href="about.html" class="ul-grow text-[13.5px] tracking-wide text-charcoal/75 hover:text-charcoal transition-colors duration-500">אודות</a>
       <a href="testimonials.html" aria-current="page" class="ul-grow text-[13.5px] tracking-wide text-charcoal hover:text-charcoal transition-colors duration-500">המלצות</a>
-      <a href="contact.html" class="ul-grow text-[13.5px] tracking-wide text-charcoal/65 hover:text-charcoal transition-colors duration-500">צור קשר</a>
+      <a href="contact.html" class="ul-grow text-[13.5px] tracking-wide text-charcoal/75 hover:text-charcoal transition-colors duration-500">צור קשר</a>
     </nav>
     <div class="flex items-center gap-4">
       <!-- כפתור outline במקום מלא -->
@@ -151,22 +149,20 @@
   <div id="mobile-menu" class="hidden md:hidden mx-6 mt-4 bg-charcoal border border-charcoal/80 p-3 flex-col">
     <!-- הסדנאות עם תת-תפריט -->
     <div data-dropdown>
-      <a href="workshops.html" data-dropdown-toggle aria-expanded="false" class="flex items-center justify-between px-3 py-3 text-paper/80 hover:text-gold transition-colors">
-        הסדנאות
+      <a href="workshops.html" data-dropdown-toggle aria-expanded="false" class="flex items-center justify-between px-3 py-3 text-paper/80 hover:text-paper transition-colors">
+        המסלולים
         <svg data-chevron width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300"><polyline points="6 9 12 15 18 9"/></svg>
       </a>
       <div data-dropdown-menu class="hidden pr-3 pb-1">
-        <a href="workshop-shnati.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-gold transition-colors">הקורס השנתי</a>
-        <a href="workshop-yeladim.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-gold transition-colors">"בחירה חופשית" · ילדים</a>
-        <a href="workshop-noar.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-gold transition-colors">"בחירה חופשית" · נוער</a>
-        <a href="workshop-bogrim.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-gold transition-colors">"בחירה חופשית" · בוגרים</a>
-        <a href="workshop-ishit.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-gold transition-colors">סדנה אישית אחד על אחד</a>
-        <a href="workshop-audition.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-gold transition-colors">הכנה לאודישן</a>
+        <a href="workshop-shnati.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-paper transition-colors">הקורס השנתי</a>
+        <a href="workshop-bogrim.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-paper transition-colors">סדנת "בחירה חופשית"</a>
+        <a href="workshop-ishit.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-paper transition-colors">סדנה אישית אחד על אחד</a>
+        <a href="workshop-audition.html" class="block px-3 py-2.5 text-sm text-paper/70 hover:text-paper transition-colors">הכנה לאודישן</a>
       </div>
     </div>
-    <a href="about.html" class="px-3 py-3 text-paper/80 hover:text-gold transition-colors">אודות</a>
+    <a href="about.html" class="px-3 py-3 text-paper/80 hover:text-paper transition-colors">אודות</a>
     <a href="testimonials.html" aria-current="page" class="px-3 py-3 text-paper transition-colors">המלצות</a>
-    <a href="contact.html" class="px-3 py-3 text-paper/80 hover:text-gold transition-colors">צור קשר</a>
+    <a href="contact.html" class="px-3 py-3 text-paper/80 hover:text-paper transition-colors">צור קשר</a>
   </div>
 </header>
 
@@ -176,7 +172,7 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12">
       <div class="reveal"><span class="kicker">המלצות</span></div>
       <h1 class="reveal mt-10 sm:mt-16 font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2.6rem,9vw,7rem)]">
-        התלמידים<br/>מספרים
+        תלמידים<br/>מספרים
       </h1>
     </div>
   </section>
@@ -186,6 +182,42 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12">
       <div class="reveal mb-8 sm:mb-10"><span class="kicker">בוידאו</span></div>
       <div data-carousel="v" class="reveal cf-track">
+        <button data-yt="CPvLHSDH0hQ" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/CPvLHSDH0hQ/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button data-yt="c3a3giG1--s" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/c3a3giG1--s/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button data-yt="mWJxOo6LPQs" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/mWJxOo6LPQs/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button data-yt="ODCx2AYHmiY" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/ODCx2AYHmiY/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button data-yt="EC0oTi6Hc6U" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/EC0oTi6Hc6U/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button data-yt="rNHV_bdjhYQ" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/rNHV_bdjhYQ/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button data-yt="bJVqaIsIdNo" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/bJVqaIsIdNo/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button data-yt="4Z1zZpHJrss" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/4Z1zZpHJrss/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button data-yt="EiAQ7UdWYNk" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
+          <img src="https://i.ytimg.com/vi/EiAQ7UdWYNk/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+          <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
         <button data-yt="He8_h438haU" data-yt-title="המלצת תלמיד" class="cf-slide group relative bg-charcoal" style="aspect-ratio:9/16">
           <img src="https://i.ytimg.com/vi/He8_h438haU/hqdefault.jpg" alt="המלצת וידאו" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
           <span class="absolute inset-0 grid place-items-center"><span class="grid place-items-center w-12 h-12 rounded-full bg-paper/90 text-burgundy"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span>
@@ -211,7 +243,7 @@
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12">
       <div class="reveal mb-8 sm:mb-10">
         <span class="kicker">בכתב</span>
-        <p class="mt-4 max-w-2xl text-lg font-300 text-charcoal/65 leading-relaxed">בלי ניסוחים מסודרים — ככה תלמידים כותבים לי, בזמן אמת, אחרי סדנה או אחרי אודישן.</p>
+        <p class="mt-4 max-w-2xl text-lg font-400 text-charcoal/75 leading-relaxed">בלי ניסוחים מסודרים — ככה תלמידים כותבים לי, בזמן אמת, אחרי סדנה או אחרי אודישן.</p>
       </div>
       <div data-carousel="p" class="reveal cf-track">
         <a href="assets/rec-1.jpg" data-img-lightbox="assets/rec-1.jpg" class="cf-slide relative bg-charcoal" style="aspect-ratio:9/16"><img src="assets/rec-1.jpg" alt="הודעת תודה מתלמיד/ה בוואטסאפ" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" /></a>
@@ -240,14 +272,14 @@
   </section>
 
   <!-- ===================== CTA ===================== -->
-  <section class="bg-paper border-t border-charcoal/10">
+  <section class="bg-graphite">
     <div class="mx-auto max-w-[88rem] px-6 sm:px-12 pt-20 sm:pt-36 pb-20 sm:pb-32">
       <div class="reveal grid lg:grid-cols-12 items-end gap-y-10 gap-x-12">
         <div class="lg:col-span-8">
-          <h2 class="font-700 tracking-tight leading-[0.95] text-charcoal text-[clamp(2.4rem,9vw,7rem)]">הסיפור הבא<br/>הוא שלכם.</h2>
+          <h2 class="font-700 tracking-tight leading-[0.95] text-cream text-[clamp(2.4rem,9vw,7rem)]">הסיפור הבא<br/>הוא שלכם.</h2>
         </div>
         <div class="lg:col-span-4">
-          <p class="text-base sm:text-xl font-300 text-charcoal/65 leading-relaxed mb-8">בואו נתחיל — שלחו לי הודעה ונמצא את המסלול שמתאים לכם.</p>
+          <p class="text-base sm:text-xl font-400 text-cream/75 leading-relaxed mb-8">בואו נתחיל — שלחו לי הודעה ונמצא את המסלול שמתאים לכם.</p>
           <a data-wa href="#" class="group inline-flex items-center gap-4 rounded-none btn-primary px-9 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-500 transition-colors duration-500">
             דברו איתי בוואטסאפ
             <span class="transition-transform duration-500 group-hover:-translate-x-2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
@@ -263,16 +295,15 @@
   <div class="mx-auto max-w-[88rem] px-6 sm:px-12 py-10 flex flex-col sm:flex-row items-center justify-between gap-5">
     <!-- לוגו footer: לוגו מלא + שם -->
     <a href="index.html" class="flex items-center gap-3">
-      <img src="assets/logo-full.png" alt="בחירה חופשית — יואב רוזנברג" class="h-14 w-auto opacity-90" />
-      <span class="text-base font-700 tracking-wide text-charcoal">יואב רוזנברג</span>
+      <img src="assets/logo-full-black.png" alt="סטודיו למשחק — יואב רוזנברג" class="h-16 w-auto opacity-90" />
     </a>
-    <div class="flex items-center gap-8 text-[13px] text-charcoal/65">
-      <a href="workshops.html" class="ul-grow hover:text-gold-ink transition-colors duration-500">הסדנאות</a>
-      <a href="about.html" class="ul-grow hover:text-gold-ink transition-colors duration-500">אודות</a>
-      <a href="testimonials.html" class="ul-grow hover:text-gold-ink transition-colors duration-500">המלצות</a>
-      <a href="contact.html" class="ul-grow hover:text-gold-ink transition-colors duration-500">צור קשר</a>
+    <div class="flex items-center gap-8 text-[13px] text-charcoal/75">
+      <a href="workshops.html" class="ul-grow hover:text-burgundy transition-colors duration-500">המסלולים</a>
+      <a href="about.html" class="ul-grow hover:text-burgundy transition-colors duration-500">אודות</a>
+      <a href="testimonials.html" class="ul-grow hover:text-burgundy transition-colors duration-500">המלצות</a>
+      <a href="contact.html" class="ul-grow hover:text-burgundy transition-colors duration-500">צור קשר</a>
     </div>
-    <p class="text-[13px] text-charcoal/65">© 2026 יואב רוזנברג — יפו, תל אביב</p>
+    <p class="text-[13px] text-charcoal/75">© 2026 יואב רוזנברג — יפו, תל אביב</p>
   </div>
 </footer>
 
@@ -284,6 +315,6 @@
   דברו איתי בוואטסאפ
 </a>
 
-<script src="main.js?v=28"></script>
+<script src="main.js?v=30"></script>
 </body>
 </html>

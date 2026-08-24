@@ -8,7 +8,7 @@
      cream — so every focusable element gets an explicit burgundy ring.
      :focus-visible only, so mouse clicks stay clean. */
   :focus-visible {
-    outline: 2px solid #9E1B32;
+    outline: 2px solid #A95142;
     outline-offset: 3px;
     border-radius: 1px;
   }
@@ -17,7 +17,7 @@
   .bg-ink :focus-visible,
   [data-yt-overlay] :focus-visible,
   [data-img-overlay] :focus-visible {
-    outline-color: #DcC08A;
+    outline-color: #FFFFFF;
   }
 
   /* Skip link — first tab stop on every page. */
@@ -26,7 +26,7 @@
     right: 1.5rem;
     top: -100px;
     z-index: 100;
-    background: #9E1B32;
+    background: #A95142;
     color: #fff;
     padding: 0.75rem 1.25rem;
     font-size: 14px;
@@ -44,14 +44,14 @@
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.02em;
-    color: #8A6D3B;
+    color: #565656;
   }
   .kicker::after {
     content: "";
     display: block;
     width: 2.25rem;
     height: 1px;
-    background: #C8A96E;
+    background: #9C9C9C;
     margin-top: 0.6rem;
   }
   /* variant without the rule, for inline/meta positions */
@@ -64,23 +64,23 @@
      contrast on cream) and one ghost, defined once.
      =================================================================== */
   .btn-primary {
-    background: #9E1B32;
+    background: #A95142;
     color: #FFFFFF;
-    box-shadow: 0 25px 50px -15px rgba(158, 27, 50, 0.45);
+    box-shadow: 0 25px 50px -15px rgba(169, 81, 66, 0.45);
     transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
   }
   .btn-primary:hover {
-    background: #C4223F;
-    box-shadow: 0 30px 60px -15px rgba(196, 34, 63, 0.55);
+    background: #BC6450;
+    box-shadow: 0 30px 60px -15px rgba(188, 100, 80, 0.55);
     transform: scale(1.03);
   }
   .btn-ghost {
-    border: 1px solid #9E1B32;
-    color: #9E1B32;
+    border: 1px solid #A95142;
+    color: #A95142;
     transition: background 0.5s ease, color 0.5s ease;
   }
   .btn-ghost:hover {
-    background: #9E1B32;
+    background: #A95142;
     color: #FFFFFF;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -101,7 +101,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    background: #9E1B32;
+    background: #A95142;
     color: #fff;
     font-size: 15px;
     font-weight: 500;
@@ -111,7 +111,7 @@
     box-shadow: 0 -12px 30px -18px rgba(26, 26, 26, 0.55);
     transition: background 0.35s ease;
   }
-  .mobile-cta:active { background: #6E1224; }
+  .mobile-cta:active { background: #7E3A2F; }
   /* keep the bar from covering the last line of the footer */
   @media (max-width: 767px) {
     body { padding-bottom: 4.25rem; }
@@ -147,8 +147,8 @@
     transition: border-color 0.35s ease, background 0.35s ease, color 0.35s ease;
   }
   .cf-ctl:hover {
-    border-color: #9E1B32;
-    background: #9E1B32;
+    border-color: #A95142;
+    background: #A95142;
     color: #fff;
   }
   .cf-count {
@@ -186,7 +186,7 @@
     .faq-q { font-size: 1.25rem; }
   }
   .faq-q::-webkit-details-marker { display: none; }
-  .faq-q:hover { color: #9E1B32; }
+  .faq-q:hover { color: #A95142; }
   /* the +/− indicator: two strokes, and the vertical one collapses on open */
   .faq-q::after {
     content: "";
@@ -195,8 +195,8 @@
     height: 0.85rem;
     margin-top: 0.35rem;
     background-image:
-      linear-gradient(#8A6D3B, #8A6D3B),
-      linear-gradient(#8A6D3B, #8A6D3B);
+      linear-gradient(#565656, #565656),
+      linear-gradient(#565656, #565656);
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
     background-size: 100% 1px, 1px 100%;
@@ -209,11 +209,35 @@
     padding-bottom: 1.5rem;
     max-width: 52rem;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.75;
-    color: rgba(26, 26, 26, 0.7);
+    color: rgba(26, 26, 26, 0.78);
   }
   @media (prefers-reduced-motion: reduce) {
     .faq-q::after { transition: none; }
   }
+
+  /* ===================================================================
+     Dark sections — per Yoav (Aug 24) the page alternates cream ↔
+     graphite (#454545) instead of cream ↔ white. Any component that
+     lands inside a .bg-graphite section flips to its light-on-dark
+     variant here, so the HTML only has to swap the text-* utilities.
+     =================================================================== */
+  .bg-graphite .kicker { color: #D6D6D6; }
+  .bg-graphite .kicker::after { background: #8A8A8A; }
+  .bg-graphite :focus-visible { outline-color: #FFFFFF; }
+  .bg-graphite .faq-item { border-color: rgba(250, 248, 244, 0.18); }
+  .bg-graphite .faq-item:last-of-type { border-color: rgba(250, 248, 244, 0.18); }
+  .bg-graphite .faq-q { color: #FAF8F4; }
+  .bg-graphite .faq-q:hover { color: #FFFFFF; }
+  .bg-graphite .faq-q::after {
+    background-image:
+      linear-gradient(#D6D6D6, #D6D6D6),
+      linear-gradient(#D6D6D6, #D6D6D6);
+  }
+  .bg-graphite .faq-a { color: rgba(250, 248, 244, 0.78); }
+  .bg-graphite .cf-ctl { border-color: rgba(250, 248, 244, 0.35); color: #FAF8F4; }
+  .bg-graphite .cf-ctl:hover { border-color: #A95142; background: #A95142; color: #fff; }
+  .bg-graphite .cf-count { color: rgba(250, 248, 244, 0.72); }
+  .bg-graphite .badge-recommended { border-color: #D6D6D6; color: #D6D6D6; }
 }

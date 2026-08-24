@@ -24,6 +24,11 @@
     phone: '+972-52-620-2541',
     instagram: 'https://www.instagram.com/yoav_ros/',
     waDefaultMsg: 'היי יואב, הגעתי דרך האתר ואשמח לשמוע פרטים על הסדנאות.',
+    /* booking: paste Yoav's scheduler link (Calendly / Setmore event URL) to
+       enable barbershop-style online booking on the audition-prep page.
+       Yoav controls working hours and which slots are open in that account.
+       Empty string = the WhatsApp fallback stays. */
+    booking: '',
   };
 
   /* Wire every WhatsApp trigger. Markup: <a data-wa> or
@@ -59,7 +64,7 @@
     'html.js-fx .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,.84,.44,1),transform .9s cubic-bezier(.16,.84,.44,1);}',
     'html.js-fx .reveal.in{opacity:1;transform:none;animation:none!important;}',
     /* scroll progress hairline */
-    '#scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;background:#C8A96E;transform:scaleX(0);transform-origin:right center;will-change:transform;}',
+    '#scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;background:#A95142;transform:scaleX(0);transform-origin:right center;will-change:transform;}',
     /* hero portrait */
     'html.js-fx .fx-tilt{transition:transform .3s cubic-bezier(.16,.84,.44,1);will-change:transform;}',
     /* workshop / teaser rows slide on hover */
@@ -401,20 +406,12 @@
         scrollSettle = setTimeout(recycle, 150);
       }, { passive: true });
 
-      /* autoplay: advance one slide every 3.2s, forever, in one direction */
-      var timer = null;
-      var userDrove = false;   /* once someone takes the wheel, stay stopped */
+      /* No autoplay (Yoav's request, Aug 24): the strip moves only when the
+         visitor drags it, taps a slide, or uses the arrows. */
       function advance(dir) {
         var i = all.indexOf(activeSlide()) + (dir || 1);
         centerOn(all[(i + all.length) % all.length], true);
       }
-      function play() { if (reduce || timer || userDrove) return; timer = setInterval(advance, 3200); }
-      function stop() { if (timer) { clearInterval(timer); timer = null; } }
-      track.addEventListener('mouseenter', stop);
-      track.addEventListener('mouseleave', play);
-      track.addEventListener('touchstart', stop, { passive: true });
-      track.addEventListener('pointerdown', stop);
-      document.addEventListener('visibilitychange', function () { document.hidden ? stop() : play(); });
 
       /* -----------------------------------------------------------------
          Controls. The track hides its scrollbar and dims everything that
@@ -447,12 +444,8 @@
         var a = activeSlide();
         if (a && countEl) countEl.textContent = (+a.getAttribute('data-cf-i') + 1) + ' / ' + all.length;
       }
-      ctls.querySelector('[data-cf-prev]').addEventListener('click', function () {
-        userDrove = true; stop(); advance(-1);
-      });
-      ctls.querySelector('[data-cf-next]').addEventListener('click', function () {
-        userDrove = true; stop(); advance(1);
-      });
+      ctls.querySelector('[data-cf-prev]').addEventListener('click', function () { advance(-1); });
+      ctls.querySelector('[data-cf-next]').addEventListener('click', function () { advance(1); });
       track.addEventListener('scroll', function () {
         if (raf2) return;
         raf2 = requestAnimationFrame(function () { paintCount(); raf2 = null; });
@@ -477,7 +470,6 @@
       setTimeout(setup, 300);          /* re-run after layout/fonts settle */
       window.addEventListener('load', setup);
       window.addEventListener('resize', function () { pad(); centerOn(activeSlide(), false); });
-      play();
     });
   }
 
@@ -812,8 +804,26 @@
     start();
   }
 
+  /* =====================================================================
+     Online booking ([data-booking], audition-prep page): when SITE.booking
+     is configured, swap the WhatsApp fallback for the scheduler iframe.
+     ===================================================================== */
+  function initBooking() {
+    var slot = document.querySelector('[data-booking]');
+    if (!slot || !SITE.booking) return;
+    var fb = slot.querySelector('[data-booking-fallback]');
+    if (fb) fb.remove();
+    var frame = document.createElement('iframe');
+    frame.src = SITE.booking;
+    frame.title = 'קביעת תור';
+    frame.loading = 'lazy';
+    frame.style.cssText = 'width:100%;height:680px;border:0;background:#fff;';
+    slot.appendChild(frame);
+  }
+
   /* ---- init ---- */
   wireWhatsApp();
+  initBooking();
   injectFXStyles();
   initHeader();
   initDropdowns();

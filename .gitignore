@@ -13,6 +13,15 @@ about_pic*.jpeg
 about_pic*.jpg
 yoav-portrait.jpeg
 happy_students/
+new_photos/
+NEW_PHOTOS/
+
+# Working notes from Yoav's feedback rounds (root files get deployed by
+# Netlify, so keep these out of the repo)
+YOAV_CHANGES.md
+
+# Local agent/editor config
+.claude/
 
 # Ad-hoc design-review screenshots
 /_*.png
