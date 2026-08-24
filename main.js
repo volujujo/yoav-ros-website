@@ -338,19 +338,36 @@
     var reduce = prefersReduced();
 
     tracks.forEach(function (track) {
-      /* `all` mirrors the track's real DOM order — no clones. Once the
-         centered slide reaches either end, recycle() moves the far node
-         across to the opposite side (and shifts scrollLeft by exactly one
-         slide-width to compensate) so playback keeps going in one
-         direction without ever showing the same file twice at once. */
-      var all = Array.from(track.querySelectorAll('.cf-slide'));
-      if (all.length < 2) return;
+      /* Seamless infinite scroll, both directions (Yoav: no jumping).
+         The old approach moved one DOM node across whenever an end was
+         reached, which visibly jumped mid-drag. Instead the slide set is
+         TRIPLED — [copy A][originals][copy B] — the view starts on the
+         middle set, and whenever the scroll position drifts deep into a
+         buffer copy we teleport by exactly one set-width. The buffer shows
+         pixel-identical content, so the teleport is invisible. */
+      var originals = Array.from(track.querySelectorAll('.cf-slide'));
+      if (originals.length < 2) return;
 
-      function unit() {
-        var gap = parseFloat(getComputedStyle(track).gap || getComputedStyle(track).columnGap || '16') || 16;
-        return all[0].offsetWidth + gap;
-      }
-      /* dynamic side padding so ANY slide can sit dead-center at any width */
+      /* Clones are created BEFORE initYouTube/initImageLightbox run, so
+         cloned [data-yt] / [data-img-lightbox] slides get wired like the
+         originals. */
+      var before = document.createDocumentFragment();
+      var after = document.createDocumentFragment();
+      originals.forEach(function (s) {
+        before.appendChild(s.cloneNode(true));
+        after.appendChild(s.cloneNode(true));
+      });
+      track.insertBefore(before, track.firstChild);
+      track.appendChild(after);
+      var all = Array.from(track.querySelectorAll('.cf-slide'));
+      var n = originals.length;
+      var mid0 = all[n];                       /* first slide of the middle set */
+
+      /* one full set-width, gaps included: the distance between the same
+         slide in two consecutive copies */
+      function setWidth() { return all[n].offsetLeft - all[0].offsetLeft; }
+
+      /* dynamic side padding so any slide can sit dead-center at any width */
       function pad() {
         var p = Math.max(0, (track.clientWidth - all[0].offsetWidth) / 2);
         track.style.paddingLeft = p + 'px';
@@ -368,28 +385,29 @@
       }
       function markActive() {
         var best = activeSlide();
-        all.forEach(function (s) { s.classList.toggle('is-active', s === best); });
+        var bi = all.indexOf(best) % n;
+        /* highlight every copy of the active slide, so the teleport never
+           changes what looks lit */
+        all.forEach(function (s, i) { s.classList.toggle('is-active', i % n === bi); });
         return best;
       }
       function centerOn(slide, smooth) {
         var target = slide.offsetLeft + slide.offsetWidth / 2 - track.clientWidth / 2;
         track.scrollTo({ left: target, behavior: smooth ? 'smooth' : 'auto' });
       }
-      /* once we've settled with the first or last slide centered, rotate
-         its opposite neighbor across so there's always a next slide */
-      function recycle() {
-        var active = activeSlide(), u = unit();
-        if (active === all[all.length - 1]) {
-          var first = all.shift();
-          all.push(first);
-          track.appendChild(first);
-          track.scrollLeft -= u;
-        } else if (active === all[0]) {
-          var last = all.pop();
-          all.unshift(last);
-          track.insertBefore(last, track.firstChild);
-          track.scrollLeft += u;
-        }
+
+      /* teleport back into the middle set once scrolling settles inside a
+         buffer copy — the shift is exactly one set-width, so the pixels
+         don't change and nothing visibly moves */
+      function rewrap() {
+        var w = setWidth();
+        if (!w) return;
+        var u = all[0].offsetWidth;
+        /* scroll position that centers the middle set's first slide */
+        var p0 = mid0.offsetLeft + u / 2 - track.clientWidth / 2;
+        var pos = track.scrollLeft;
+        if (pos < p0 - u) track.scrollLeft = pos + w;
+        else if (pos > p0 + w - u) track.scrollLeft = pos - w;
         markActive();
       }
 
@@ -399,18 +417,21 @@
         raf = requestAnimationFrame(function () { markActive(); raf = null; });
       }, { passive: true });
 
-      /* recycle once scrolling (autoplay or manual drag) has settled */
       var scrollSettle = null;
       track.addEventListener('scroll', function () {
         clearTimeout(scrollSettle);
-        scrollSettle = setTimeout(recycle, 150);
+        scrollSettle = setTimeout(rewrap, 120);
       }, { passive: true });
+      /* scrollend fires exactly when a drag/snap finishes (Chrome 114+,
+         Firefox) — the timeout above stays as the Safari fallback */
+      track.addEventListener('scrollend', rewrap);
 
       /* No autoplay (Yoav's request, Aug 24): the strip moves only when the
          visitor drags it, taps a slide, or uses the arrows. */
       function advance(dir) {
         var i = all.indexOf(activeSlide()) + (dir || 1);
-        centerOn(all[(i + all.length) % all.length], true);
+        if (i < 0 || i >= all.length) return;   /* buffers make this unreachable */
+        centerOn(all[i], true);
       }
 
       /* -----------------------------------------------------------------
@@ -445,7 +466,7 @@
 
       function setup() {
         pad();
-        centerOn(all[0], false);
+        centerOn(mid0, false);   /* start on the middle copy — buffers on both sides */
         markActive();
       }
       setup();
